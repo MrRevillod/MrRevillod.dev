@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Info from "../components/Info.astro";
+import Image from "../components/Image.astro";
+import Pages from "../components/Pages.astro";
+---
+
+<Layout title="Luciano Revillod">
+	<main class="h-screen w-8/12 flex flex-row items-center justify-center">
+		<article class="w-3/4 flex flex-col gap-10 text-white">
+			<Header />
+			<Info />
+		</article>
+
+		<article class="w-1/4 flex items-center justify-center">
+			<Image />
+		</article>
+	</main>
+
+	<main class="h-screen w-8/12 flex flex-row items-center justify-center">
+		<article class="w-full flex flex-col gap-12 text-white">
+			<section class="flex flex-col justify-between gap-8">
+				<h1 class="text-4xl font-inter font-bold">
+					Proyectos y enlaces de interés
+				</h1>
+
+				<p>
+					Como estudiante y futuro Ingeniero civil informático creo
+					que trabajar en proyectos con base en problematicas de la
+					vida real es fundamental.
+				</p>
+			</section>
+
+			<Pages />
+		</article>
+	</main>
+</Layout>

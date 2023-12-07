@@ -1,0 +1,16 @@
+<img
+    id="main_image"
+    src="/main-picture.png"
+    alt="main-picture"
+    class="rounded-md"
+/>
+<script>
+    document.getElementById("main_image").addEventListener("click", () => {
+        window.scroll({
+            top: screen.height,
+            behavior: "smooth",
+        });
+
+        console.log("a");
+    });
+</script>
