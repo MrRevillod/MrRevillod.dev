@@ -1,0 +1,33 @@
+---
+import PageCard from "./PageCard.astro";
+import PagesMap from "../../utils/pages";
+---
+
+<>
+    <section class="flex flex-col justify-between gap-8">
+        <h1 class="text-4xl font-inter font-bold">
+            Proyectos y enlaces de interés
+        </h1>
+
+        <p>
+            Los proyectos son un método escencial de aprendizaje, con ellos te
+            enfrentas a problemas reales a los cuales debes dar una solución
+            inteligente. En esta sección encontrarás proyectos desarrollados
+            tanto en equipo como en individual además de enlaces a distintos
+            sitios relacionados con mi trabajo y estudios.
+        </p>
+    </section>
+
+    <section class="grid grid-cols-2 grid-rows-2 gap-6">
+        {
+            PagesMap.map(({ pageName, imgSrc, url, desc }) => (
+                <PageCard
+                    imgSrc={imgSrc}
+                    url={url}
+                    desc={desc}
+                    pageName={pageName}
+                />
+            ))
+        }
+    </section>
+</>
