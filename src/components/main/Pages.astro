@@ -5,7 +5,7 @@ import PagesMap from "../../utils/pages";
 
 <>
     <section class="flex flex-col justify-between gap-8">
-        <h1 class="text-4xl font-inter font-bold">
+        <h1 class="md:text-4xl text-3xl font-bold">
             Proyectos y enlaces de interés
         </h1>
 
@@ -18,7 +18,9 @@ import PagesMap from "../../utils/pages";
         </p>
     </section>
 
-    <section class="grid grid-cols-2 grid-rows-2 gap-6">
+    <section
+        class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-6"
+    >
         {
             PagesMap.map(({ pageName, imgSrc, url, desc }) => (
                 <PageCard
