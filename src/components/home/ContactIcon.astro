@@ -1,0 +1,12 @@
+---
+interface Props {
+    ref: string;
+    iconClass: string;
+}
+
+const { ref, iconClass } = Astro.props;
+---
+
+<a href={ref}>
+    <i class=`text-3xl md:text-3xl hover:cursor-pointer ${iconClass}`></i>
+</a>

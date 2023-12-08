@@ -1,16 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/main/Header.astro";
-import Info from "../components/main/Info.astro";
-import Pages from "../components/main/Pages.astro";
-import ProfileImage from "../components/main/ProfileImage.astro";
+import Header from "../components/home/Header.astro";
+import Info from "../components/home/Info.astro";
+import Pages from "../components/home/Pages.astro";
+import ProfileImage from "../components/home/ProfileImage.astro";
+
+import { ScrollButton } from "../components/home/ScrollButton";
 ---
 
 <Layout title="Luciano Revillod">
 	<main
-		class="h-screen w-10/12 md:w-8/12 flex flex-col md:flex-row md:items-center justify-start mt-40 md:mt-0 md:justify-center"
+		class="h-screen w-10/12 md:w-8/12 flex flex-col md:flex-row md:items-center justify-start mt-40 md:mt-0 md:justify-center relative"
 	>
-		<article class="md:w-3/4 w-full flex flex-col gap-10 text-white">
+		<article class="md:w-3/4 w-full flex flex-col gap-10">
 			<Header />
 			<Info />
 		</article>
@@ -18,43 +20,25 @@ import ProfileImage from "../components/main/ProfileImage.astro";
 		<article class="md:w-1/4 md:flex items-center justify-center hidden">
 			<ProfileImage />
 		</article>
+
+		<ScrollButton
+			client:visible
+			screenY={"screen"}
+			path={"M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"}
+		/>
 	</main>
 
 	<main
-		class="h-screen mt-48 md:mt-0 w-10/12 md:w-8/12 flex flex-row items-center justify-center"
+		class="h-screen mt-48 md:mt-0 w-10/12 md:w-8/12 flex flex-row items-center justify-center relative"
 	>
-		<article class="w-full flex flex-col gap-12 text-white">
+		<article class="w-full flex flex-col gap-12">
 			<Pages />
 		</article>
-	</main>
 
-	<main
-		class="h-4/5 mb-20 mt-96 md:h-screen w-8/12 flex flex-col items-center gap-8 justify-center"
-	>
-		<h1 class="text-4xl md:text-7xl font-bold">Contacto</h1>
-		<section class="flex flex-row gap-8">
-			<a href="https://www.linkedin.com/in/luciano-revillod-dev/">
-				<i
-					class="text-3xl md:text-4xl hover:cursor-pointer ti ti-brand-linkedin"
-				></i>
-			</a>
-
-			<a href="">
-				<i
-					class="text-3xl md:text-4xl hover:cursor-pointer ti ti-brand-discord"
-				></i>
-			</a>
-
-			<a href="/contacto">
-				<i class="text-3xl md:text-4xl hover:cursor-pointer ti ti-mail"
-				></i>
-			</a>
-
-			<a href="">
-				<i
-					class="text-3xl md:text-4xl hover:cursor-pointer ti ti-brand-instagram"
-				></i>
-			</a>
-		</section>
+		<ScrollButton
+			client:visible
+			screenY={0}
+			path={"M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"}
+		/>
 	</main>
 </Layout>
