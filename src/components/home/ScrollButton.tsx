@@ -1,15 +1,19 @@
 
-const handleClick = (screenY) => {
+const handleClick = (scrollIndex) => {
 
-    const y = screenY === "screen" ? screen.height : screenY
+    const scrollMap = {
+        0: screen.height - 125,
+        1: screen.height * 2,
+        2: 0,
+    }
 
     window.scrollTo({
-        top: y,
+        top: scrollMap[scrollIndex],
         behavior: "smooth"
     })
 }
 
-const ScrollButton = ({ screenY, path }) => {
+const ScrollButton = ({ screenY, path, customClass }) => {
 
     return (
 
@@ -19,7 +23,7 @@ const ScrollButton = ({ screenY, path }) => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 w-6 h-6"
+            className={`hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 w-6 h-6 cursor-pointer ${customClass}`}
             onClick={() => handleClick(screenY)}
         >
             <path

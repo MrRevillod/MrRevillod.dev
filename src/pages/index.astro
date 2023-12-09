@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Pages from "../components/home/Pages.astro";
 
 import Info from "../components/home/Info.astro";
+import Contact from "../components/home/Contact.astro";
 ---
 
 <Layout title="Luciano Revillod">
@@ -13,8 +14,14 @@ import Info from "../components/home/Info.astro";
 	</main>
 
 	<main
-		class="h-3/4 mb-20 mt-96 md:h-screen w-10/12 flex flex-col items-center gap-8 justify-center"
+		class="h-3/4 md:mb-8 md:mt-0 mt-96 mb-8 md:h-screen md:w-8/12 w-10/12 flex flex-col items-center gap-8 justify-center relative"
 	>
 		<Pages />
+	</main>
+
+	<main
+		class="md:h-screen h-40 w-8/12 flex flex-col items-center gap-8 justify-center relative"
+	>
+		<Contact />
 	</main>
 </Layout>
