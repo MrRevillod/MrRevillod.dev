@@ -1,9 +1,43 @@
 ---
-import About from "./About.astro";
 import Icons from "./Icons.astro";
+import ScrollButton from "./ScrollButton.tsx";
 ---
 
-<section class="flex flex-col gap-12 md:gap-8">
-    <About />
-    <Icons />
-</section>
+<>
+    <article class="md:w-3/4 w-full flex flex-col gap-10">
+        <section class="flex justify-between items-center">
+            <h1 class="text-4xl md:text-5xl font-inter mb-4 md:mb-0 font-bold">
+                Luciano Revillod Jeréz.
+            </h1>
+        </section>
+
+        <section class="flex flex-col gap-12 md:gap-8">
+            <div class="md:w-4/5 w-full flex flex-col gap-4">
+                <h4 class="text-2xl font-semibold">Sobre mí</h4>
+                <p>
+                    Soy un estudiante de segundo año de ingeniería civil en
+                    informática de la Universidad Católica de Temuco. Estoy
+                    entusiasmado con el desarrollo web y cada día me esfuerzo
+                    por aprender nuevas tecnologías, así como mejorar las que ya
+                    domino.
+                </p>
+            </div>
+            <Icons />
+        </section>
+    </article>
+
+    <article class="md:w-1/4 md:flex items-center justify-center hidden">
+        <img
+            id="main_image"
+            src="/main-picture.webp"
+            alt="main-picture"
+            class="rounded-md hidden md:flex"
+        />
+    </article>
+
+    <ScrollButton
+        client:visible
+        screenY={"screen"}
+        path={"M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"}
+    />
+</>

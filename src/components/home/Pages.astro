@@ -1,35 +1,45 @@
 ---
 import PageCard from "./PageCard.astro";
 import PagesMap from "../../utils/pages";
+import ScrollButton from "./ScrollButton.tsx";
 ---
 
 <>
-    <section class="flex flex-col justify-between gap-8">
-        <h1 class="md:text-4xl text-3xl font-bold">
-            Proyectos y enlaces de interés
-        </h1>
+    <article class="w-full flex flex-col gap-12">
+        <section class="flex flex-col justify-between gap-8">
+            <h1 class="md:text-4xl text-3xl font-bold">
+                Proyectos y enlaces de interés
+            </h1>
 
-        <p>
-            Los proyectos son un método escencial de aprendizaje, con ellos te
-            enfrentas a problemas reales a los cuales debes dar una solución
-            inteligente. En esta sección encontrarás proyectos desarrollados
-            tanto en equipo como en individual además de enlaces a distintos
-            sitios relacionados con mi trabajo y estudios.
-        </p>
-    </section>
+            <p>
+                Los proyectos son un método escencial de aprendizaje, con ellos
+                te enfrentas a problemas reales a los cuales debes dar una
+                solución inteligente. En esta sección encontrarás proyectos
+                desarrollados tanto en equipo como en individual además de
+                enlaces a distintos sitios relacionados con mi trabajo y
+                estudios.
+            </p>
+        </section>
 
-    <section
-        class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-6"
-    >
-        {
-            PagesMap.map(({ pageName, imgSrc, url, desc }) => (
-                <PageCard
-                    imgSrc={imgSrc}
-                    url={url}
-                    desc={desc}
-                    pageName={pageName}
-                />
-            ))
-        }
-    </section>
+        <section
+            class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-6"
+        >
+            {
+                PagesMap.map(({ pageName, imgSrc, url, desc }) => (
+                    <PageCard
+                        imgSrc={imgSrc}
+                        url={url}
+                        desc={desc}
+                        pageName={pageName}
+                    />
+                ))
+            }
+        </section>
+    </article>
+
+    <ScrollButton
+        client:visible
+        screenY={0}
+        path={"M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"}
+    />
 </>

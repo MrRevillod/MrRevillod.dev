@@ -9,7 +9,7 @@ const handleClick = (screenY) => {
     })
 }
 
-export const ScrollButton = ({ screenY, path }) => {
+const ScrollButton = ({ screenY, path }) => {
 
     return (
 
@@ -30,3 +30,5 @@ export const ScrollButton = ({ screenY, path }) => {
         </svg>
     )
 }
+
+export default ScrollButton

@@ -1,44 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/home/Header.astro";
-import Info from "../components/home/Info.astro";
+import Main from "../layouts/Main.astro";
 import Pages from "../components/home/Pages.astro";
-import ProfileImage from "../components/home/ProfileImage.astro";
 
-import { ScrollButton } from "../components/home/ScrollButton";
+import Info from "../components/home/Info.astro";
 ---
 
 <Layout title="Luciano Revillod">
-	<main
-		class="h-screen w-10/12 md:w-8/12 flex flex-col md:flex-row md:items-center justify-start mt-40 md:mt-0 md:justify-center relative"
+	<Main
+		class:list={"md:flex-row md:justify-center md:mt-40 flex-col justify-start"}
 	>
-		<article class="md:w-3/4 w-full flex flex-col gap-10">
-			<Header />
-			<Info />
-		</article>
+		<Info />
+	</Main>
 
-		<article class="md:w-1/4 md:flex items-center justify-center hidden">
-			<ProfileImage />
-		</article>
-
-		<ScrollButton
-			client:visible
-			screenY={"screen"}
-			path={"M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"}
-		/>
-	</main>
-
-	<main
-		class="h-screen mt-48 md:mt-0 w-10/12 md:w-8/12 flex flex-row items-center justify-center relative"
-	>
-		<article class="w-full flex flex-col gap-12">
-			<Pages />
-		</article>
-
-		<ScrollButton
-			client:visible
-			screenY={0}
-			path={"M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"}
-		/>
-	</main>
+	<Main class:list={"mt-48 flex-col justify-center"}>
+		<Pages />
+	</Main>
 </Layout>
