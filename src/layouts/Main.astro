@@ -1,0 +1,13 @@
+---
+interface Props {
+    customClasses?: string;
+}
+
+const { customClasses } = Astro.props;
+---
+
+<main
+    class=`flex flex-col relative w-10/12 md:h-screen md:w-8/12 ${customClasses}`
+>
+    <slot />
+</main>

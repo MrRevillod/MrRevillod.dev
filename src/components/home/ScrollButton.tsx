@@ -2,8 +2,8 @@
 const handleClick = (scrollIndex) => {
 
     const scrollMap = {
-        0: screen.height - 125,
-        1: screen.height * 2,
+        0: window.innerHeight,
+        1: window.innerHeight * 2,
         2: 0,
     }
 
@@ -23,7 +23,7 @@ const ScrollButton = ({ screenY, path, customClass }) => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className={`hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 w-6 h-6 cursor-pointer ${customClass}`}
+            className={`hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 cursor-pointer ${customClass}`}
             onClick={() => handleClick(screenY)}
         >
             <path

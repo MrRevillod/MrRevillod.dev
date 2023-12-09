@@ -1,15 +1,32 @@
 
 import { useForm } from 'react-hook-form';
+import { useState, useRef } from 'react';
 
-export const ContactForm = () => {
+import emailjs from '@emailjs/browser';
+
+const ContactForm = () => {
+
+    const form = useRef<HTMLFormElement>()
+    const [message, setMessage] = useState({ text: '', type: '' })
+
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = async (e) => {
 
-    const onSubmit = (data) => {
-        console.log(data);
-    };
+        if (!form.current) return;
+
+        emailjs.sendForm(import.meta.env.PUBLIC_EMAIL_SERVICE_ID,
+            import.meta.env.PUBLIC_EMAIL_TEMPLATE_ID, form.current, import.meta.env.PUBLIC_EMAIL_PUBLIC_KEY)
+
+            .then((result) => {
+                setMessage({ text: 'Mensaje enviado con éxito!', type: 'success' });
+                form.current?.reset();
+            }, (error) => {
+                setMessage({ text: 'Error al enviar el mensaje.', type: 'error' });
+            });
+    }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} method='POST' className="md:w-7/12 w-10/12 mt-4">
+        <form ref={form} onSubmit={handleSubmit(onSubmit)} method='POST' className="md:w-7/12 w-10/12 mt-4">
             <div className="mb-6">
                 <label htmlFor="name" className="mb-2 block text-base font-semibold">
                     Nombre / emisor
@@ -24,11 +41,11 @@ export const ContactForm = () => {
             </div>
 
             <div className="mb-6">
-                <label htmlFor="email" className="mb-2 block text-base font-semibold">
+                <label htmlFor="mail" className="mb-2 block text-base font-semibold">
                     Correo electrónico
                 </label>
                 <input
-                    {...register("email", {
+                    {...register("mail", {
                         required: "Este campo es obligatorio",
                         pattern: {
                             value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
@@ -43,19 +60,6 @@ export const ContactForm = () => {
             </div>
 
             <div className="mb-6">
-                <label htmlFor="subject" className="mb-2 block text-base font-semibold">
-                    Sujeto
-                </label>
-                <input
-                    {...register("subject", { required: "Este campo es obligatorio" })}
-                    type="text"
-                    placeholder="Solicitud de contacto"
-                    className="w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-medium text-neutral-800 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                />
-                <ErrorMessage error={errors.subject} />
-            </div>
-
-            <div className="mb-6">
                 <label htmlFor="message" className="mb-2 block text-base font-semibold">
                     Mensaje
                 </label>
@@ -67,6 +71,12 @@ export const ContactForm = () => {
                 ></textarea>
                 <ErrorMessage error={errors.message} />
             </div>
+
+            {message.text && (
+                <div className={`mt-4 mb-4 alert ${message.type === 'error' ? 'text-red-600' : 'text-green-600'}`}>
+                    {message.text}
+                </div>
+            )}
 
             <div>
                 <button
@@ -88,3 +98,4 @@ const ErrorMessage = ({ error }) => {
     );
 };
 
+export default ContactForm;

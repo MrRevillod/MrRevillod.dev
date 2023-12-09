@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Main from "../layouts/Main.astro";
 import Pages from "../components/home/Pages.astro";
 
 import Info from "../components/home/Info.astro";
@@ -7,21 +8,19 @@ import Contact from "../components/home/Contact.astro";
 ---
 
 <Layout title="Luciano Revillod">
-	<main
-		class="md:h-screen h-60 w-10/12 md:w-8/12 flex flex-col md:flex-row md:items-center justify-start mt-24 md:mt-0 md:justify-center relative"
+	<Main
+		customClasses="h-60 md:flex-row items-center justify-start mt-24 md:mt-0 md:justify-center"
 	>
 		<Info />
-	</main>
+	</Main>
 
-	<main
-		class="h-3/4 md:mb-8 md:mt-0 mt-96 mb-8 md:h-screen md:w-8/12 w-10/12 flex flex-col items-center gap-8 justify-center relative"
+	<Main
+		customClasses="h-3/4 mt-96 mb-8 items-center gap-8 justify-center md:m-0"
 	>
 		<Pages />
-	</main>
+	</Main>
 
-	<main
-		class="md:h-screen h-40 w-8/12 flex flex-col items-center gap-8 justify-center relative"
-	>
+	<Main customClasses="h-40 items-center gap-8 justify-center">
 		<Contact />
-	</main>
+	</Main>
 </Layout>
