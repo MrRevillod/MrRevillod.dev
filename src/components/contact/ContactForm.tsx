@@ -26,7 +26,7 @@ const ContactForm = () => {
     }
 
     return (
-        <form ref={form} onSubmit={handleSubmit(onSubmit)} method='POST' className="md:w-7/12 w-10/12 mt-4">
+        <form ref={form} method='POST' className="md:w-7/12 w-10/12 mt-4">
             <div className="mb-6">
                 <label htmlFor="name" className="mb-2 block text-base font-semibold">
                     Nombre / emisor
@@ -56,7 +56,7 @@ const ContactForm = () => {
                     placeholder="ejemplo@dominio.com"
                     className="w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-medium text-neutral-800 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 />
-                <ErrorMessage error={errors.email} />
+                <ErrorMessage error={errors.mail} />
             </div>
 
             <div className="mb-6">
@@ -80,8 +80,8 @@ const ContactForm = () => {
 
             <div>
                 <button
-                    type="submit"
                     className="w-full rounded-md bg-blue-800 py-3 px-8 text-base font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                    onClick={handleSubmit(onSubmit)}
                 >
                     Enviar
                 </button>
