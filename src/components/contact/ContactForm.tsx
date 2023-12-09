@@ -9,10 +9,10 @@ export const ContactForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} method='POST' className="w-7/12">
+        <form onSubmit={handleSubmit(onSubmit)} method='POST' className="md:w-7/12 w-10/12 mt-4">
             <div className="mb-6">
                 <label htmlFor="name" className="mb-2 block text-base font-semibold">
-                    Nombre / Emisor
+                    Nombre / emisor
                 </label>
                 <input
                     {...register("name", { required: "Este campo es obligatorio" })}
@@ -49,7 +49,7 @@ export const ContactForm = () => {
                 <input
                     {...register("subject", { required: "Este campo es obligatorio" })}
                     type="text"
-                    placeholder="Solicitud de Contacto"
+                    placeholder="Solicitud de contacto"
                     className="w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-medium text-neutral-800 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 />
                 <ErrorMessage error={errors.subject} />
