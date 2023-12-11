@@ -2,7 +2,7 @@
 const pagesMap = [{
 
     pageName: "SmartParking",
-    imgSrc: "/smartparking.png",
+    imgSrc: "/smartparking/smartparking.png",
     url: "/proyectos/smartparking",
     desc: "Aplicación de administración y manejo de estacionamientos en tiempo real.",
 },

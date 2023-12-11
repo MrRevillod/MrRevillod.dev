@@ -1,0 +1,9 @@
+---
+interface Props {
+    iconClass: string;
+}
+
+const { iconClass } = Astro.props;
+---
+
+<i class=`text-xl hover:-translate-y-2 transform transition ${iconClass}`></i>

@@ -1,6 +1,8 @@
 ---
-import Icons from "./Icons.astro";
+import DevIcon from "./DevIcon.astro";
 import ScrollButton from "./ScrollButton.tsx";
+
+import { infoIcons } from "../utils/icons";
 ---
 
 <>
@@ -22,7 +24,15 @@ import ScrollButton from "./ScrollButton.tsx";
                     las que ya domino.
                 </p>
             </div>
-            <Icons />
+            <div
+                class="md:flex md:flex-row md:items-start md:justify-start grid grid-cols-5 place-items-center place-content-center p-2 md:p-0 grid-rows-3 gap-6"
+            >
+                {
+                    infoIcons.map((iconClass) => (
+                        <DevIcon iconClass={iconClass} />
+                    ))
+                }
+            </div>
         </section>
     </article>
 
