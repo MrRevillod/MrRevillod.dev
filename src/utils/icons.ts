@@ -7,13 +7,8 @@ export const infoIcons = [
     "devicon-express-original",
     "devicon-socketio-original",
     "devicon-tailwindcss-plain",
-    "devicon-cplusplus-plain",
-    "devicon-python-plain",
-    "devicon-git-plain",
-    "devicon-github-original",
     "devicon-mongodb-plain",
     "devicon-linux-plain",
-    "devicon-vim-plain",
     "devicon-docker-plain",
 ];
 

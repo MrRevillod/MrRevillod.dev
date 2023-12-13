@@ -1,42 +1,43 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
 const ProjectImage = ({ image }) => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState("");
-    const [modalStyle, setModalStyle] = useState({ opacity: 0, transition: 'opacity 300ms ease-in-out' });
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [selectedImage, setSelectedImage] = useState("")
+    const [modalStyle, setModalStyle] = useState({ opacity: 0, transition: 'opacity 300ms ease-in-out' })
 
     const openModal = (image) => {
-        setSelectedImage(image);
-        setIsModalOpen(true);
-        setTimeout(() => setModalStyle({ ...modalStyle, opacity: 1 }), 10);
-    };
+        setSelectedImage(image)
+        setIsModalOpen(true)
+        setTimeout(() => setModalStyle({ ...modalStyle, opacity: 1 }), 10)
+    }
 
     const closeModal = () => {
-        setModalStyle({ ...modalStyle, opacity: 0 });
-        setTimeout(() => setIsModalOpen(false), 300);
-    };
+        setModalStyle({ ...modalStyle, opacity: 0 })
+        setTimeout(() => setIsModalOpen(false), 300)
+    }
 
     const handleOutsideClick = (e) => {
         if (e.target.classList.contains('modal')) {
-            closeModal();
+            closeModal()
         }
-    };
+    }
 
     useEffect(() => {
-        const handleKeyDown = (e) => { if (e.key === "Escape") closeModal(); };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
+        const handleKeyDown = (e) => { if (e.key === "Escape") closeModal() }
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [])
 
     return (
         <>
+
             <img
                 key={image}
                 src={image}
                 alt={`Slide ${image}`}
-                className="block md:w-5/6 md:h-5/6 h-5/6 w-5/6 transition-all duration-1000 ease-linear"
+                className="block h-5/6 w-5/6 transition-all cursor-pointer duration-1000 ease-linear rounded-md"
                 onClick={() => openModal(image)}
             />
 
@@ -52,7 +53,7 @@ const ProjectImage = ({ image }) => {
                 </div>
             )}
         </>
-    );
-};
+    )
+}
 
-export default ProjectImage;
+export default ProjectImage

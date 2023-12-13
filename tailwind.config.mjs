@@ -9,6 +9,12 @@ export default {
 		extend: {
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
+			},
+			backgroundColor: {
+				"custom-blue": '#00569e'
+			},
+			textColor: {
+				"custom-blue": '#00569e'
 			}
 		},
 	},

@@ -2,25 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import Main from "../layouts/Main.astro";
 
+import Header from "../components/Header.astro";
 import Info from "../components/Info.astro";
-import Pages from "../components/Pages.astro";
-import Contact from "../components/Contact.astro";
+import Projects from "../components/Projects.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Luciano Revillod">
-	<Main
-		customClasses="h-60 md:flex-row items-center justify-start mt-24 md:mt-0 md:justify-center"
-	>
+	<Main customClasses="">
+		<Header />
 		<Info />
-	</Main>
-
-	<Main
-		customClasses="h-3/4 mt-96 mb-8 items-center gap-8 justify-center md:m-0"
-	>
-		<Pages />
-	</Main>
-
-	<Main customClasses="h-40 items-center gap-8 justify-center">
-		<Contact />
+		<Projects />
+		<Footer />
 	</Main>
 </Layout>

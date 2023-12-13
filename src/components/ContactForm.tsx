@@ -29,7 +29,7 @@ const ContactForm = () => {
         <form ref={form} method='POST' className="md:w-7/12 w-10/12 mt-4">
             <div className="mb-6">
                 <label htmlFor="name" className="mb-2 block text-base font-semibold">
-                    Nombre / emisor
+                    Nombre completo
                 </label>
                 <input
                     {...register("name", { required: "Este campo es obligatorio" })}
@@ -80,7 +80,7 @@ const ContactForm = () => {
 
             <div>
                 <button
-                    className="w-full rounded-md bg-blue-800 py-3 px-8 text-base font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                    className="w-full rounded-md bg-custom-blue py-3 px-8 text-base font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
                     onClick={handleSubmit(onSubmit)}
                 >
                     Enviar
