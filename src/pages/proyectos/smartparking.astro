@@ -1,36 +1,92 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import ScrollButton from "../../components/ScrollButton.tsx";
 import ProjectImage from "../../components/ProjectImage.tsx";
-import DevIcon from "../../components/DevIcon.astro";
-
-import { smartParkingIcons } from "../../utils/icons.ts";
-import { desktopImages, mobileImages } from "../../utils/images.ts";
 ---
 
 <style>
     .link::after {
         content: " \1F517";
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .grid-cont {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+    }
+
+    .grid-cont-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2;
+        gap: 1rem;
     }
 </style>
 
 <Layout title="Proyectos">
-    <main
-        class="h-screen flex flex-col mt-40 md:mt-0 justify-center items-center gap-12 md:flex-row md:w-9/12 w-10/12 md:relative"
-    >
+    <main class="w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-8">
         <article
-            class="flex flex-col gap-12 items-center justify-center w-full md:w-1/2"
+            class="w-full flex flex-row gap-4 items-center justify-between"
         >
-            <section class="flex flex-col gap-8">
-                <a href="https://github.com/MrRevillod/SmartParking">
-                    <h1
-                        class="text-4xl md:text-4xl mb-4 md:mb-0 font-bold link cursor-pointer hover:underline"
-                    >
-                        Smart Parking
-                    </h1>
-                </a>
+            <section class="flex flex-row gap-4 items-center">
+                <a
+                    href="/"
+                    class="h-8 w-8 rounded-full bg-white text-black text-center flex items-center justify-center font-bold"
+                >
+                    {"<-"}</a
+                >
+                <p class="font-semibold">Volver</p>
+            </section>
 
+            <section class="flex flex-row gap-6">
+                <i class="text-xl devicon-react-original"></i>
+                <i class="text-xl devicon-bootstrap-plain"></i>
+                <i class="text-xl devicon-nodejs-plain"></i>
+                <i class="text-xl devicon-express-original"></i>
+                <i class="text-xl devicon-socketio-original"></i>
+                <i class="text-xl devicon-mongodb-plain"></i>
+                <i class="text-xl devicon-docker-plain"></i>
+            </section>
+        </article>
+
+        <article class="grid-cont h-1/2">
+            <section class="bg-custom-blue min-h-full rounded-md">
+                <ProjectImage
+                    client:visible
+                    transition:persist
+                    image="/smartparking/admin-1.webp"
+                    customClasses={"h-full w-full"}
+                />
+            </section>
+            <section class="min-h-full grid-cont-2">
+                <div
+                    class="bg-custom-blue h-full w-full rounded-md overflow-hidden"
+                >
+                    <ProjectImage
+                        client:visible
+                        transition:persist
+                        image="/smartparking/mobile-1.webp"
+                        customClasses={"w-full h-full object-cover"}
+                    />
+                </div>
+                <div
+                    class="bg-custom-blue h-full w-full rounded-md overflow-hidden"
+                >
+                    <ProjectImage
+                        client:visible
+                        transition:persist
+                        image="/smartparking/mobile-2.webp"
+                        customClasses={"w-full h-full object-cover"}
+                    />
+                </div>
+            </section>
+        </article>
+
+        <article class="flex flex-col gap-4">
+            <section class="flex flex-col gap-2">
+                <a href="" class="hover:underline link text-2xl font-bold"
+                    >Smart Parking</a
+                >
                 <p>
                     Smart Parking es un proyecto que busca facilitar la
                     administración y gestión de estacionamientos. Esta web
@@ -39,109 +95,16 @@ import { desktopImages, mobileImages } from "../../utils/images.ts";
                 </p>
             </section>
 
-            <section class="flex flex-col w-full gap-6 justify-start">
-                <h2 class="text-lg font-bold">Tecnologías implementadas</h2>
-
-                <div class="flex flex-row gap-8">
-                    {
-                        smartParkingIcons.map((iconClass) => (
-                            <DevIcon iconClass={iconClass} />
-                        ))
-                    }
-                </div>
-            </section>
-
-            <section class="flex flex-col w-full gap-4 justify-start">
-                <h2 class="text-lg font-bold">Metodología y desarrollo</h2>
-
+            <section class="flex flex-col gap-2">
+                <h2 class="text-lg font-semibold">Metodología y desarrollo</h2>
                 <p>
                     Este proyecto fue desarrollado en un equipo de 5 personas
                     bajo la metodología Scrum. Dentro del equipo, me encargué de
-                    la implementación del backend, tanto de la API REST como del
-                    sistema de comunicación en tiempo real con Socket.io.
+                    la implementación del backend, tanto de la API REST,
+                    auntenticación de usuarios y sistema de comunicación en
+                    tiempo real con Socket.io.
                 </p>
             </section>
         </article>
-
-        <article
-            class="md:w-1/2 w-full flex flex-col items-center md:items-end justify-center gap-8"
-        >
-            {
-                desktopImages.map((image) => (
-                    <ProjectImage
-                        image={image}
-                        client:visible
-                        transition:persist
-                    />
-                ))
-            }
-        </article>
-
-        <ScrollButton
-            client:visible
-            screenY={0}
-            customClass={"bottom-8"}
-            path={"M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"}
-        />
-    </main>
-
-    <main
-        class="h-screen flex flex-col mt-20 mb-8 md:mb-0 md:mt-0 justify-center items-center gap-12 md:flex-row md:w-9/12 w-10/12 relative"
-    >
-        <article
-            class="flex flex-col gap-12 items-center justify-center w-full md:w-1/2"
-        >
-            <section class="flex flex-col gap-6">
-                <h2 class="text-lg font-bold">
-                    Simulación de la aplicación móvil
-                </h2>
-
-                <p>
-                    Para complementar el proyecto, se desarrolló una aplicación
-                    móvil simulada en la web. Esta permite mediante un sistema
-                    de autenticación ingregar al sistema para solicitar entradas
-                    y reservas.
-                </p>
-            </section>
-
-            <section class="flex flex-col w-full gap-4 justify-start">
-                <h2 class="text-lg font-bold">
-                    Características adicionales del sistema
-                </h2>
-
-                <p>
-                    Además de las funcionalidades básicas, el sistema cuenta con
-                    un sistema de historial de usuarios el cual permite
-                    almacenar el flujo vehicular del estacionamiento.
-                </p>
-
-                <p>
-                    Por otro lado se implementó un sistema de acceso a usuarios
-                    no registrados, los cuales podrán solicitar ingreso y salida
-                    mediante la lectura de un código QR.
-                </p>
-            </section>
-        </article>
-
-        <article
-            class="w-full md:w-1/2 flex flex-col items-center md:items-end justify-center gap-8"
-        >
-            {
-                mobileImages.map((image) => (
-                    <ProjectImage
-                        image={image}
-                        client:visible
-                        transition:persist
-                    />
-                ))
-            }
-        </article>
-
-        <ScrollButton
-            client:visible
-            screenY={2}
-            customClass={"bottom-8"}
-            path={"M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"}
-        />
     </main>
 </Layout>

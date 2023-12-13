@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react"
 
-const ProjectImage = ({ image }) => {
+const ProjectImage = ({ image, customClasses }) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedImage, setSelectedImage] = useState("")
@@ -37,7 +37,7 @@ const ProjectImage = ({ image }) => {
                 key={image}
                 src={image}
                 alt={`Slide ${image}`}
-                className="block h-5/6 w-5/6 transition-all cursor-pointer duration-1000 ease-linear rounded-md"
+                className={`block transition-all cursor-pointer duration-1000 ease-linear rounded-md ${customClasses}`}
                 onClick={() => openModal(image)}
             />
 
@@ -48,7 +48,7 @@ const ProjectImage = ({ image }) => {
                     style={modalStyle}
                 >
                     <div className="relative p-4">
-                        <img src={selectedImage} alt="Selected" className="max-w-[80vw] max-h-[80vh]" />
+                        <img src={selectedImage} alt="Selected" className="max-w-[80vw] max-h-[80vh] rounded-lg" />
                     </div>
                 </div>
             )}

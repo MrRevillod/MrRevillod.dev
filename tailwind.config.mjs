@@ -11,7 +11,7 @@ export default {
 				'inter': ['Inter', 'sans-serif'],
 			},
 			backgroundColor: {
-				"custom-blue": '#00569e'
+				"custom-blue": '#0e5492'
 			},
 			textColor: {
 				"custom-blue": '#00569e'
