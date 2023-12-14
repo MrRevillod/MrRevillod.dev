@@ -5,14 +5,9 @@ import ProjectImage from "../../components/ProjectImage.tsx";
 
 <style>
     .link::after {
-        content: " \1F517";
+        content: "\1F517";
         font-size: 1.2rem;
-    }
-    .grid-cont {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr;
-        gap: 1rem;
+        margin-left: 0.5rem;
     }
 
     .grid-cont-2 {
@@ -24,11 +19,21 @@ import ProjectImage from "../../components/ProjectImage.tsx";
 </style>
 
 <Layout title="Proyectos">
-    <main class="w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-8">
+    <main
+        class="w-11/12 md:w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-8 pt-8 md:p-0"
+    >
+        <article>
+            <a
+                href="https://github.com/MrRevillod/SmartParking"
+                class="hover:underline link text-3xl md:hidden flex font-bold"
+                target="_blank">Smart Parking</a
+            >
+        </article>
+
         <article
-            class="w-full flex flex-row gap-4 items-center justify-between"
+            class="w-full flex-row gap-4 items-center justify-between flex"
         >
-            <section class="flex flex-row gap-4 items-center">
+            <section class="hidden md:flex flex-row gap-4 items-center">
                 <a
                     href="/"
                     class="h-8 w-8 rounded-full bg-white text-black text-center flex items-center justify-center font-bold"
@@ -49,8 +54,12 @@ import ProjectImage from "../../components/ProjectImage.tsx";
             </section>
         </article>
 
-        <article class="grid-cont h-1/2">
-            <section class="bg-custom-blue min-h-full rounded-md">
+        <article
+            class="md:h-1/2 h-1/3 grid md:grid-cols-2fr-1fr md:grid-rows-1 grid-cols-1 grid-rows-1 gap-4"
+        >
+            <section
+                class="bg-custom-blue min-h-full rounded-md md:block hidden"
+            >
                 <ProjectImage
                     client:visible
                     transition:persist
@@ -58,7 +67,9 @@ import ProjectImage from "../../components/ProjectImage.tsx";
                     customClasses={"h-full w-full"}
                 />
             </section>
-            <section class="min-h-full grid-cont-2">
+            <section
+                class="min-h-full grid grid-cols-2 grid-rows-1 gap-4 md:grid-cols-1 md:grid-rows-2"
+            >
                 <div
                     class="bg-custom-blue h-full w-full rounded-md overflow-hidden"
                 >
@@ -84,9 +95,12 @@ import ProjectImage from "../../components/ProjectImage.tsx";
 
         <article class="flex flex-col gap-4">
             <section class="flex flex-col gap-2">
-                <a href="" class="hover:underline link text-2xl font-bold"
-                    >Smart Parking</a
-                >
+                <a
+                    target="_blank"
+                    href="https://github.com/MrRevillod/SmartParking"
+                    class="hover:underline link text-2xl font-bold hidden md:flex"
+                    >Smart Parking
+                </a>
                 <p>
                     Smart Parking es un proyecto que busca facilitar la
                     administración y gestión de estacionamientos. Esta web

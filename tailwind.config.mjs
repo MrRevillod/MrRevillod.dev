@@ -15,6 +15,9 @@ export default {
 			},
 			textColor: {
 				"custom-blue": '#00569e'
+			},
+			gridTemplateColumns: {
+				'2fr-1fr': '2fr 1fr',
 			}
 		},
 	},
