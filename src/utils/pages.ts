@@ -9,7 +9,7 @@ const pagesMap = [{
 {
     pageName: "One Dark Minimal",
     imgSrc: "/one-dark-minimal.webp",
-    url: "https://marketplace.visualstudio.com/items?itemName=MrRevillod.one-dark-minimal",
+    url: "/proyectos/one-dark-minimal",
     desc: "Tema basado en One Dark Pro con un enfoque minimalista y limpio.",
 },
 {

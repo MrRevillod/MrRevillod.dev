@@ -21,3 +21,8 @@ export const smartParkingIcons = [
     "devicon-mongodb-plain",
     "devicon-docker-plain",
 ];
+
+export const oneDarkIcons = [
+    "devicon-javascript-plain",
+    "devicon-nodejs-plain",
+]

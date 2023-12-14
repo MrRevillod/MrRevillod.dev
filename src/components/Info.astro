@@ -1,3 +1,8 @@
+---
+import DevIcon from "./DevIcon.astro";
+import { infoIcons } from "../utils/icons.ts";
+---
+
 <article class="flex flex-row gap-12 w-full justify-between items-center">
     <section class="lg:w-4/6 w-full h-full flex flex-col justify-center gap-10">
         <h1 class="text-3xl md:text-4xl mt-4 mb-4 md:mb-0 md:mt-0 font-bold">
@@ -20,16 +25,11 @@
             <div
                 class="md:flex w-full md:flex-row md:items-start md:justify-start grid grid-cols-5 place-items-center place-content-center grid-rows-2 gap-6"
             >
-                <i class="text-xl devicon-html5-plain"></i>
-                <i class="text-xl devicon-css3-plain"></i>
-                <i class="text-xl devicon-javascript-plain"></i>
-                <i class="text-xl devicon-nodejs-plain"></i>
-                <i class="text-xl devicon-express-original"></i>
-                <i class="text-xl devicon-socketio-original"></i>
-                <i class="text-xl devicon-tailwindcss-plain"></i>
-                <i class="text-xl devicon-mongodb-plain"></i>
-                <i class="text-xl devicon-linux-plain"></i>
-                <i class="text-xl devicon-docker-plain"></i>
+                {
+                    infoIcons.map((icon) => {
+                        return <DevIcon iconClass={icon} />;
+                    })
+                }
             </div>
         </div>
 
@@ -39,6 +39,8 @@
             <a
                 class="flex flex-row gap-2 w-1/2 md:min-w-fit md:w-1/5 pt-2 pb-2 pr-4 pl-4 bg-custom-blue rounded-lg font-semibold"
                 href="https://www.linkedin.com"
+                target="_blank"
+                rel="noreferrer"
             >
                 <img
                     width="25"
@@ -53,6 +55,8 @@
             <a
                 class="flex flex-row gap-2 w-1/2 md:min-w-fit md:w-1/5 pt-2 pb-2 pr-4 pl-4 bg-custom-blue rounded-lg font-semibold"
                 href="https://github.com/MrRevillod"
+                target="_blank"
+                rel="noreferrer"
             >
                 <img
                     width="25"
