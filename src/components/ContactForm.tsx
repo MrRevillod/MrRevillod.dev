@@ -14,8 +14,11 @@ const ContactForm = () => {
 
         if (!form.current) return;
 
-        emailjs.sendForm(import.meta.env.PUBLIC_EMAIL_SERVICE_ID,
-            import.meta.env.PUBLIC_EMAIL_TEMPLATE_ID, form.current, import.meta.env.PUBLIC_EMAIL_PUBLIC_KEY)
+        const SERVICE = import.meta.env.PUBLIC_EMAIL_SERVICE_ID
+        const TEMPLATE = import.meta.env.PUBLIC_EMAIL_TEMPLATE_ID
+        const PUBLIC_KEY = import.meta.env.PUBLIC_EMAIL_PUBLIC_KEY
+
+        emailjs.sendForm(SERVICE, TEMPLATE, form.current, PUBLIC_KEY)
 
             .then((result) => {
                 setMessage({ text: 'Mensaje enviado con éxito!', type: 'success' });
