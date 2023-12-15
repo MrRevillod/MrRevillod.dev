@@ -36,7 +36,7 @@ const ProjectImage = ({ image, customClasses }) => {
             <img
                 key={image}
                 src={image}
-                alt={`Slide ${image}`}
+                alt={`${image}`}
                 className={`block transition-all cursor-pointer duration-1000 ease-linear rounded-md ${customClasses}`}
                 onClick={() => openModal(image)}
             />
@@ -48,7 +48,7 @@ const ProjectImage = ({ image, customClasses }) => {
                     style={modalStyle}
                 >
                     <div className="relative p-4">
-                        <img src={selectedImage} alt="Selected" className="max-w-[80vw] max-h-[80vh] rounded-lg" />
+                        <img src={selectedImage} alt="Selected image" className="max-w-[80vw] max-h-[80vh] rounded-lg" />
                     </div>
                 </div>
             )}

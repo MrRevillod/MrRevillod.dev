@@ -15,7 +15,7 @@ import ProjectImage from "./ProjectImage.tsx";
 >
     <section class="min-h-full rounded-md md:block hidden">
         <ProjectImage
-            client:visible
+            client:load
             transition:persist
             image={first_image}
             customClasses={"h-full w-full"}
@@ -26,7 +26,7 @@ import ProjectImage from "./ProjectImage.tsx";
     >
         <div class="h-full w-full rounded-md overflow-hidden">
             <ProjectImage
-                client:visible
+                client:load
                 transition:persist
                 image={second_image}
                 customClasses={"w-full h-full object-cover"}
@@ -34,7 +34,7 @@ import ProjectImage from "./ProjectImage.tsx";
         </div>
         <div class="h-full w-full rounded-md overflow-hidden">
             <ProjectImage
-                client:visible
+                client:load
                 transition:persist
                 image={third_image}
                 customClasses={"w-full h-full object-cover"}

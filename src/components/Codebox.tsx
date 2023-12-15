@@ -16,7 +16,7 @@ const CodeBox = ({ text }) => {
             <div className="absolute top-3.5 right-3 cursor-pointer" onClick={handleCopy}>
 
                 <img
-                    alt="copy"
+                    alt="copy-image"
                     width="24"
                     height="24"
                     src={!copied ?
