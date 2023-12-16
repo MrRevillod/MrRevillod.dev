@@ -29,7 +29,7 @@ const ContactForm = () => {
     }
 
     return (
-        <form ref={form} method='POST' className="md:w-7/12 w-10/12">
+        <form ref={form} method='POST' className="md:w-7/12 w-11/12">
             <div className="mb-6">
                 <label htmlFor="name" className="mb-2 block text-base font-semibold">
                     Nombre completo

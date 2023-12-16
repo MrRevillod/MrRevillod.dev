@@ -1,26 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 import ContactForm from "../components/ContactForm.tsx";
+import Main from "../layouts/Main.astro";
 ---
 
 <Layout title="Contacto">
-    <main class="h-screen w-full flex flex-row justify-center items-center">
-        <article
-            class="md:w-2/4 -mt-4 md:-mt-0 w-full h-1/2 flex flex-col gap-6 items-center justify-center"
-        >
-            <h1 class="md:w-7/12 w-10/12 text-2xl md:text-3xl font-bold">
+    <Main customClasses="lg:gap-40 md:gap-40 gap-32">
+        <Header />
+
+        <article class="w-full flex flex-col gap-6 items-center justify-center">
+            <h1 class="md:w-7/12 w-11/12 text-xl md:text-3xl font-bold">
                 Iniciemos una conversación
             </h1>
             <ContactForm client:visible transition:persist />
         </article>
-
-        <article class="md:w-2/4 hidden md:flex md:flex-row gap-8">
-            <img
-                src="/L-Phone.webp"
-                loading="lazy"
-                alt="contact-image"
-                class="opacity-60"
-            />
-        </article>
-    </main>
+    </Main>
 </Layout>
