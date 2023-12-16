@@ -1,0 +1,35 @@
+---
+import Main from "../../layouts/Main.astro";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+import type { PostFrontmatter } from "../../content/config";
+
+export const getStaticPaths = async () => {
+    const posts = await Astro.glob<PostFrontmatter>(
+        "../../content/posts/*.mdx",
+    );
+
+    return posts.map((post) => ({
+        params: {
+            slug: post.frontmatter.slug,
+        },
+        props: {
+            post,
+            title: post.frontmatter.title,
+        },
+    }));
+};
+
+const { Content } = Astro.props.post;
+const title = Astro.props.post.frontmatter.title;
+---
+
+<Layout title={title}>
+    <Main customClasses="">
+        <Header />
+        <Content />
+        <Footer />
+    </Main>
+</Layout>

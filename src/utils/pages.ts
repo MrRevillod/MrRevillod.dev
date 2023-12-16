@@ -19,9 +19,9 @@ const pagesMap = [{
     desc: "Aquí encontrarás repositorios y mi trabajo en proyectos de interés.",
 },
 {
-    pageName: "Utilidades",
+    pageName: "Recursos",
     imgSrc: "/code.webp",
-    url: "/",
+    url: "/recursos",
     desc: "Articulos, guías y más.",
 }]
 
