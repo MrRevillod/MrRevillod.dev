@@ -1,10 +1,158 @@
 ---
-date: 16/12/2023
+date: "2023-03-01"
 slug: instalar-archlinux-efi
 title: Instalar Arch Linux en sistemas EFI
 image: "/images/posts/Archlinux-neofetch.webp"
-description: "Una guía paso a paso sobre el proceso de instalación la distibución ArchLinux"
+description: "Una guía paso a paso sobre el proceso de instalación de la distibución ArchLinux"
 ---
 
+import Codebox from "../../components/Codebox"
 
-# {frontmatter.title}
+<img src="/images/posts/ArchLogo.webp" class="w-full rounded-md"/>
+
+
+### Configurar el teclado en español en la instalación 
+
+<Codebox text='$ loadkeys es' client:visible/>
+
+### Verificar conexión a internet
+<Codebox text='$ ping www.google.com' client:visible/>
+
+### Verificar particiones y estado del disco
+
+<Codebox text='$ lsblk' client:visible/> 
+
+### Crear particiones con cfdisk
+<Codebox text='$ cfdisk /dev/x' client:visible/>
+
+### Esquema de particiones
+
+| | | | |
+|--------|-------------|------|----------------|
+| /dev/x1| /boot       | 512M | EFI system     |
+| /dev/x2| /           | xG   | Linux FS       |
+| /dev/x3| swap        | 4G   | Linux Swap     |  
+  
+#
+### Formatear las particiones con un sistema de archivos
+
+#### Formatear partición de arranque /dev/x1
+<Codebox text='$ mkfs.vfat -F32 /dev/x1' client:visible/>
+
+#### Formatear partición raíz /dev/x2
+<Codebox text='$ mkfs.ext4 /dev/x2' client:visible/>
+
+#### Formatear partición swap /dev/x3
+<Codebox text='$ mkswap /dev/x3' client:visible/>   
+
+### Montar particiones
+
+#### Montar la raíz 
+<Codebox text='$ mount /dev/x2 /mnt' client:visible/> 
+
+#### Crear directorios de la partición de arranque
+<Codebox text='$ mkdir /mnt/boot' client:visible/>
+<Codebox text='$ mkdir /mnt/boot/efi' client:visible/>
+
+#### Montar la partición de arranque
+<Codebox text='$ mount /dev/x1 /mnt/boot/efi' client:visible/>
+
+#### Activar la partición swap    
+<Codebox text='$ swapon /dev/x3' client:visible/>
+
+### Instalar kernel y paquetes base
+
+#### Actualizar credenciales y repositorios oficiales
+<Codebox text='$ pacman -Sy archlinux-keyring' client:visible/>
+
+#### Instalar paquetes
+<Codebox text='$ pacstrap /mnt linux linux-firmware base base-devel grub dhcpcd networkmanager netctl wpa_supplicant dialog efibootmgr' client:visible/>
+
+### Generar tabla del sistema de archivos (fstab)
+<Codebox text='$ genfstab /mnt >> /mnt/etc/fstab' client:visible/>
+
+### Ingresar al sistema instalado
+<Codebox text='$ arch-chroot /mnt' client:visible/>
+
+### Asignar un nombre al sistema anfitrión
+<Codebox text='$ echo PC-Name > /etc/hostname' client:visible/>
+
+### Configurar zona horaria
+<Codebox text='$ ln -sf /usr/share/zoneinfo/Continente/Capital /etc/localtime' client:visible/>
+
+### Configurar reloj del sistema
+<Codebox text='$ hwclock -w' client:visible/>
+
+### Instalar gestor de arranque (grub)
+<Codebox text="$ grub-install --efi-directory=/boot/efi --bootloader-id='Arch Linux' --target=x86_64-efi" client:visible/>
+
+#### Configurar el gestor de arranque
+<Codebox text='$ grub-mkconfig -o /boot/grub/grub.cfg' client:visible/>
+
+### Crear contraseña del usuario root
+<Codebox text='$ passwd' client:visible/>
+
+### Crear un usuario
+<Codebox text='$ useradd -m Username' client:visible/>
+
+### Asignar contraseña del usuario creado
+<Codebox text='$ passwd Username' client:visible/> 
+
+### Salir y desmontar particiones
+
+<Codebox text='$ exit' client:visible/>
+<Codebox text='$ umount -R /mnt' client:visible/>
+<Codebox text='$ reboot' client:visible/>
+
+## Cuando se reinicie el SO deberás:
+
+### Iniciar sesión como superusuario
+<Codebox text='$ su' client:visible/>
+ 
+### Activar e iniciar el servicio NetworkManager
+
+<Codebox text='$ systemctl start NetworkManager' client:visible/>
+<Codebox text='$ systemctl enable NetworkManager' client:visible/>
+
+### Verificar conexión a internet
+<Codebox text='$ ping www.google.com' client:visible/>
+
+### Instalar servidor gráfico Xorg
+<Codebox text='$ pacman -S xorg' client:visible/>
+
+### Instalar controladores de video
+
+#### Gráficos integrados de Intel
+<Codebox text='$ pacman -S xf86-video-intel intel-ucode' client:visible/>
+
+#### Gráficos integrados y dedicados de AMD / Radeon
+<Codebox text='$ pacman -S xf86-video-amdgpu' client:visible/>
+
+#### Gráficos dedicados de nvidia 
+<Codebox text='$ pacman -S xf86-video-nouveau ' client:visible/>
+
+#### Controladores de video genéricos
+<Codebox text='$ pacman -S mesa' client:visible/>
+
+### Instalar entornos de graficos de escritorio
+
+#### Entorno gnome, minimalista y simple. Medianamente lígero
+
+<Codebox text='$ pacman -S gnome gdm' client:visible/>
+<Codebox text='$ systemctl enable gdm'/>
+
+#### Entorno KDE Plasma. GUI similar windows y no tan ligero
+
+<Codebox text='$ pacman -S plasma-desktop kde-applications sddm sddm-kcm' client:visible/>
+<Codebox text='$ systemctl enable sddm'/>
+
+#### Entorno XFCE4. GUI simple y ultra ligera
+
+<Codebox text='$ pacman -S xfce4 gdm xfce4-goodies' client:visible/>
+<Codebox text='$ systemctl enable gdm'/>
+
+### Reiniciar el sistema
+<Codebox text='$ reboot' client:visible/>
+
+
+  

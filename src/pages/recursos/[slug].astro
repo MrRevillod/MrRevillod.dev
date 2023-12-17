@@ -23,13 +23,23 @@ export const getStaticPaths = async () => {
 };
 
 const { Content } = Astro.props.post;
-const title = Astro.props.post.frontmatter.title;
+const { title, date } = Astro.props.post.frontmatter;
 ---
 
 <Layout title={title}>
     <Main customClasses="">
         <Header />
-        <Content />
+
+        <article
+            class="flex justify-between w-full md:-mb-8 mb-4 mt-4 items-center"
+        >
+            <h1>{title}</h1>
+            <h4><strong>Fecha:</strong> {date}</h4>
+        </article>
+
+        <article class="flex flex-col gap-4">
+            <Content />
+        </article>
         <Footer />
     </Main>
 </Layout>

@@ -12,7 +12,7 @@ const CodeBox = ({ text }) => {
     }
 
     return (
-        <div className="relative rounded-md bg-neutral-800 p-4 my-4">
+        <div className="relative rounded-md bg-neutral-800 p-4 mb-4">
             <div className="absolute top-3.5 right-3 cursor-pointer" onClick={handleCopy}>
 
                 <img

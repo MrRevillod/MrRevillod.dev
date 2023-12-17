@@ -32,7 +32,6 @@ const ProjectImage = ({ image, customClasses }) => {
 
     return (
         <>
-
             <img
                 key={image}
                 src={image}
@@ -43,7 +42,7 @@ const ProjectImage = ({ image, customClasses }) => {
 
             {isModalOpen && (
                 <div
-                    className="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-75"
+                    className="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-10"
                     onClick={handleOutsideClick}
                     style={modalStyle}
                 >
