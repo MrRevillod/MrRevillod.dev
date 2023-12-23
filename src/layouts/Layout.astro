@@ -20,6 +20,10 @@ const { title } = Astro.props;
 			#17202a 100%
 		);
 	}
+
+	html {
+		background-color: #17202a;
+	}
 </style>
 
 <html lang="es">
@@ -28,6 +32,11 @@ const { title } = Astro.props;
 		<meta
 			name="description"
 			content="Portfolio de Luciano Revillod Jeréz, estudiante de ingeniería civil informática."
+		/>
+		<meta
+			name="theme-color"
+			content="#17202a"
+			media="(prefers-color-scheme: dark)"
 		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
