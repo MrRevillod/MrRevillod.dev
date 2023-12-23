@@ -16,6 +16,21 @@ const { devIcons, projectName, projectHref } = Astro.props;
         font-size: 1.875rem;
         margin-left: 0.5rem;
     }
+
+    .back::before {
+        content: "<-";
+        color: black;
+        background-color: white;
+        border-radius: 100%;
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 700;
+    }
 </style>
 
 <>
@@ -23,11 +38,10 @@ const { devIcons, projectName, projectHref } = Astro.props;
         <section class="hidden md:flex flex-row gap-4 items-center">
             <a
                 href="/"
-                class="h-8 w-8 rounded-full bg-white text-black text-center flex items-center justify-center font-bold"
+                class="back flex items-center justify-center font-semibold"
             >
-                {"<-"}</a
+                {"Volver"}</a
             >
-            <p class="font-semibold">Volver</p>
         </section>
     </article>
     <article

@@ -12,7 +12,7 @@
     }
 
     h3 {
-        @apply text-xl font-medium;
+        @apply text-xl font-medium mb-2;
     }
 
     h4 {

@@ -11,14 +11,14 @@ export default {
 				'inter': ['Inter', 'sans-serif'],
 			},
 			backgroundColor: {
-				"custom-blue": '#0e5492'
+				"custom-blue": '#0e5492',
 			},
 			textColor: {
 				"custom-blue": '#00569e'
 			},
 			gridTemplateColumns: {
 				'2fr-1fr': '2fr 1fr',
-			}
+			},
 		},
 	},
 	plugins: [],
