@@ -10,7 +10,7 @@ import type { PostFrontmatter } from "../../content/config";
 const posts = await Astro.glob<PostFrontmatter>("../../content/posts/*.mdx");
 ---
 
-<Layout title="Recursos, guías y tutoriales">
+<Layout title="Recursos y guías">
     <Main customClasses="">
         <Header />
 
@@ -18,17 +18,11 @@ const posts = await Astro.glob<PostFrontmatter>("../../content/posts/*.mdx");
             <h1
                 class="text-3xl md:text-4xl mt-4 mb-4 md:mb-0 md:mt-0 font-bold"
             >
-                Recursos, guías y tutoriales
+                Recursos y guías
             </h1>
-
-            <p>
-                En esta sección encontrarás recursos con relación a la
-                administración de sistemas basados en UNIX así como guías de
-                desarrollo web backend.
-            </p>
         </article>
 
-        <article class="grid md:grid-cols-2 grid-cols-1 gap-4">
+        <article class="grid md:grid-cols-2 grid-cols-1 gap-4 md:-mt-4">
             {
                 posts.map((post) => {
                     return (
