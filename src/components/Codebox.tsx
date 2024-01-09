@@ -26,7 +26,7 @@ const CodeBox = ({ text }) => {
                 />
 
             </div>
-            <pre className="text-white font-mono text-sm max-w-full overflow-x-auto">{text}</pre>
+            <p className="text-white font-medium text-sm max-w-full overflow-x-auto">{text}</p>
         </div>
     )
 }

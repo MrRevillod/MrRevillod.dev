@@ -31,13 +31,13 @@ const { title, date } = Astro.props.post.frontmatter;
         <Header />
 
         <article
-            class="flex justify-between w-full md:-mb-8 mb-4 mt-4 items-center"
+            class="flex md:flex-row flex-col justify-between w-full md:-mb-8 mt-4 gap-4 md:gap-0 md:items-center"
         >
             <h1>{title}</h1>
             <h4><strong>Fecha:</strong> {date}</h4>
         </article>
 
-        <article class="flex flex-col gap-4">
+        <article class="flex flex-col gap-4 mt-0 md:mt-8">
             <Content />
         </article>
         <Footer />

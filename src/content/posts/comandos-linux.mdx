@@ -9,9 +9,8 @@ description: "Una guía de los comandos más utilizados en sistemas basados en l
 import Codebox from "../../components/Codebox"
 
 En los sistemas basados en Unix, un comando es una instrucción para ser ejecutada por un intérprete de comandos, 
-tales como *Bash*, *Zsh* o *Fish*. Estos comandos están diseñados para simplificar operaciones complejas en el sistema operativo. 
-Por ejemplo, mover un directorio a una ruta específica implica una serie de procesos a nivel de software y hardware del dispositivo. 
-Sin embargo, gracias a los comandos, esta operación se simplifica y se puede ejecutar fácilmente utilizando, en este caso, el comando "mv".
+tales como *Bash* o *Fish*. Estos comandos están diseñados para simplificar operaciones complejas en el **SO**. Por ejemplo, mover un directorio a una ruta específica implica una serie de procesos a nivel de software y hardware del dispositivo. 
+Sin embargo, gracias a los comandos, esta operación se simplifica y se puede ejecutar utilizando el comando "mv".
 
 Bajo este enfoque el objetivo de esta guía es comprender y demostrar el uso de los principales comandos en un sistema operativo basado en Linux.  
 
@@ -32,3 +31,62 @@ el comando **man** proviene de la palabra **manual**.
 
 ## Comando ls
 
+Uno de los comandos más esenciales y utilizados en un sistema operativo basado en Linux. 
+
+**Ejemplo de uso:**
+
+<Codebox text="$ ls" />
+
+Por defecto lista los archivos en formato de lista pero a través de opciones se puede modificar su comportamiento. 
+Utilizar el comando man para conocer todas las opciones disponibles.
+
+## Comando cd
+
+El comando cd permite cambiar de directorio en el sistema operativo. Su abreviación proviene de la frase **change directory**. El formato del directorio puede ser relativo o absoluto.
+
+**Ejemplo de uso:**
+
+<Codebox text="$ cd /ruta/al/directorio" />
+
+## Comando pwd
+
+Este comando pwd muestra la ruta absoluta del directorio actual en el sistema operativo. Su abreviación proviene de la frase **print working directory**.
+
+**Ejemplo de uso:**
+
+<Codebox text="$ pwd" />
+
+## Comando mkdir
+
+El comando mkdir permite crear un directorio en el sistema operativo. Su abreviación proviene de la frase **make directory**.
+
+**Ejemplo de uso:**
+
+<Codebox text="$ mkdir nombre_del_directorio" />
+
+## Comando rm
+
+El comando rm se utiliza para eliminar un fichero en el sistema operativo. Su abreviación proviene de la frase **remove**.
+
+**Ejemplo de uso:**
+
+<Codebox text="$ rm nombre_del_fichero" />
+
+Además de eliminar ficheros, el comando rm también permite eliminar directorios. Para ello se debe utilizar la opción **-r**. 
+Si se requiere eliminar algo forzosamente se debe utilizar la opción **-f**.
+
+## Comando cp 
+
+Este comando permite copiar un fichero o directorio en el sistema operativo. Su abreviación proviene de la frase **copy**.
+
+**Ejemplo de uso:**
+
+<Codebox text="$ cp nombre_del_fichero ruta_destino" />
+
+## Comando mv
+
+El comando mv permite mover un fichero o directorio en el sistema operativo. Su abreviación proviene de la frase **move**.
+
+**Ejemplo de uso:**
+
+<Codebox text="$ mv nombre_del_fichero ruta_destino" />

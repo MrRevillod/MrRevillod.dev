@@ -1,0 +1,71 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import CodeBox from "../../components/Codebox.tsx";
+import ProjectHeader from "../../components/ProjectHeader.astro";
+import ProjectGridImages from "../../components/ProjectGridImages.astro";
+
+import { authenticatorIcons } from "../../utils/icons.ts";
+---
+
+<Layout title="Authenticator">
+    <main
+        class="h-screen w-screen flex flex-col items-center justify-center font-inter text-white"
+    >
+        <section
+            class="flex flex-col items-center justify-center md:gap-12 w-10/12"
+        >
+            <div
+                class="flex flex-col gap-4 md:gap-8 items-center justify-center"
+            >
+                <h1
+                    class="text-4xl md:text-4xl lg:text-6xl font-bold text-center md:m-0 mb-4"
+                >
+                    Sistema de autenticación
+                    <span class="text-blue-300">HTTP</span>.
+                </h1>
+                <p
+                    class="text-sm md:text-md lg:text-lg mt-2 md:mt-4 text-center"
+                >
+                    Proyecto creado utilizando un stack de tecnologías modernas
+                    en el desarrollo web backend.
+                </p>
+            </div>
+        </section>
+
+        <section
+            class="flex flex-row w-3/4 md:w-1/2 gap-4 justify-center items-center mt-12"
+        >
+            <a
+                class="a-button inline-flex items-center justify-center border border-white px-4 md:px-12 py-1 md:py-2 rounded-lg w-36 md:w-44 md:h-10 lg:h-12 hover:-translate-y-1 transition transform"
+                href="/documentation/"
+                rel="noreferrer"
+            >
+                <img
+                    class="w-4 md:w-5 h-4 md:h-5"
+                    src="https://img.icons8.com/ios-filled/F5F5F5/literature--v1.png"
+                    alt="literature-icon"
+                />
+                <span class="font-semibold ml-2 text-xs md:text-base"
+                    >Documentación</span
+                >
+            </a>
+
+            <a
+                class="a-button inline-flex items-center justify-center border border-white px-4 md:px-12 py-1 md:py-2 rounded-lg w-36 md:w-44 md:h-10 lg:h-12 hover:-translate-y-1 transition transform"
+                href="https://github.com/MrRevillod/Authenticator"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <img
+                    class="w-4 md:w-5 h-4 md:h-5"
+                    src="https://img.icons8.com/ios-filled/F5F5F5/github.png"
+                    alt="github-icon"
+                />
+                <span class="font-semibold ml-2 text-xs md:text-base"
+                    >Repositorio</span
+                >
+            </a>
+        </section>
+    </main>
+</Layout>
