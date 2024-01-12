@@ -1,0 +1,18 @@
+---
+interface Props {
+    cardTitle: string;
+    cardText: string;
+}
+
+const { cardTitle, cardText } = Astro.props;
+---
+
+<div
+    class="border-neutral-400 rounded-md w-full h-full border-1 px-8 flex flex-col items-start justify-center gap-1"
+>
+    <div>
+        <h3>{cardTitle}</h3>
+    </div>
+
+    <p class="text-sm">{cardText}</p>
+</div>

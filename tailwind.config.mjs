@@ -19,6 +19,9 @@ export default {
 			gridTemplateColumns: {
 				'2fr-1fr': '2fr 1fr',
 			},
+			borderWidth: {
+				'1': '1px',
+			},
 		},
 	},
 	plugins: [],
