@@ -1,21 +1,22 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
-import CodeBox from "../../components/Codebox.tsx";
+import CodeBox from "../../components/Codebox";
 import ProjectHeader from "../../components/ProjectHeader.astro";
 import ProjectGridImages from "../../components/ProjectGridImages.astro";
 
-import { oneDarkIcons } from "../../utils/icons.ts";
+import { oneDarkIcons } from "../../utils/icons";
+import ProjectImage from "../../components/ProjectImage";
 ---
 
-<Layout title="Proyectos - One Dark Minimal">
+<Layout title="Proyectos - MinCode">
     <main
         class="w-11/12 md:w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-4 md:gap-8 pt-8 md:p-0"
     >
         <ProjectHeader
             devIcons={oneDarkIcons}
-            projectName="One Dark Minimal"
-            projectHref="https://marketplace.visualstudio.com/items?itemName=MrRevillod.one-dark-minimal"
+            projectName="MinCode - Tema y configuración para Visual Studio Code"
+            projectHref="https://github.com/MrRevillod/MinCode"
         />
 
         <ProjectGridImages
@@ -26,86 +27,78 @@ import { oneDarkIcons } from "../../utils/icons.ts";
 
         <article class="flex flex-col gap-4">
             <section class="flex mt-4">
-                <p>
-                    One Dark Minimal es un tema oscuro para visual studio code y
-                    derivados, el esquema de colores ha sido ideado para
-                    disminuir las distracciones innecesarias que provee el
-                    editor. Por otro lado coloreo de la sintaxis está basado en
-                    el famoso One Dark Pro con algunos retoques en pro de la
-                    armonía visual.
-                </p>
-            </section>
-
-            <section class="flex flex-col gap-2">
-                <h2 class="text-xl font-semibold">
-                    Mejoras adicionales de la UI
-                </h2>
-                <p>
-                    Además del tema base hay un sin número de opciones
+                <p class="text-lg">
+                    Configuración minimalista para Visual Studio Code. 
+                    Se excluye la mayor parte de distracciones y se enfoca en la escritura de código.                     Además del tema base hay un sin número de opciones
+                    Además del tema base hay un sin número de opciones 
                     adicionales a configurar para mejorar la interfaz y la
                     experiencia de usuario. En su mayoría estos ajustes
                     consisten en desabilitar caracteristicas del editor.
                 </p>
             </section>
         </article>
-    </main>
 
+    </main>
+    
     <main
         class="w-11/12 md:w-10/12 lg:w-7/12 flex flex-col justify-center gap-4 md:gap-4"
     >
-        <section>
-            <h3 class="text-lg font-semibold">
-                Desabilitar barras de desplazamiento (Vertical y Horizontal)
-            </h3>
-            <CodeBox
-                text={`"editor.scrollbar.vertical": "hidden"`}
-                client:visible
+
+        <h2 class="text-4xlxl font-bold">Apariencia</h2>
+
+        <section class="flex flex-col gap-2">
+
+            <ProjectImage
+                client:load
+                image="/images/onedark/welcome.png"
+                customClasses={"w-full h-full object-cover"}
             />
 
-            <CodeBox
-                text={`"editor.scrollbar.horizontal": "hidden"`}
-                client:visible
+            <ProjectImage
+                client:load
+                image="/images/onedark/rust.png"
+                customClasses={"w-full h-full object-cover"}
             />
-        </section>
-        <section>
-            <h3 class="text-lg font-semibold">
-                Desabilitar indicador de posición en la barra de desplazamiento
-            </h3>
-            <CodeBox
-                text={`"editor.hideCursorInOverviewRuler": true`}
-                client:visible
+
+            <ProjectImage
+                client:load
+                image="/images/onedark/node.png"
+                customClasses={"w-full h-full object-cover"}
             />
+
         </section>
-        <section>
-            <h3 class="text-lg font-semibold">Desabilitar minimapa</h3>
-            <CodeBox text={`"editor.minimap.enabled": false`} client:visible />
-        </section>
-        <section>
-            <h3 class="text-lg font-semibold">
-                Desabilitar indicadores de funciones y bloques de código en
-                barra superior
-            </h3>
-            <CodeBox text={`"breadcrumbs.enabled": false`} client:visible />
-        </section>
-        <section>
-            <h3 class="text-lg font-semibold">
-                Deshabilitar barra de opciones globales
-            </h3>
-            <CodeBox
-                text={`"window.menuBarVisibility": "hidden"`}
-                client:visible
-            />
-        </section>
-        <section>
-            <h3 class="text-lg font-semibold">
-                Deshabilitar borde de la barra de desplazamiento
-            </h3>
-            <CodeBox
-                text={`"editor.overviewRulerBorder": false`}
-                client:visible
-            />
+
+        <section class="flex flex-row justify-between items-center my-12">
+
+            <section class="flex flex-col gap-4">
+            
+                <h2>Extensiones Utilizadas (UI)</h2>
+    
+                <div class="flex flex-col gap-2">
+                    <a class="underline text-blue-400" href="https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension"> APC Customize UI++ </a>  
+                    <a class="underline text-blue-400" href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.fluent-icons"> Fluent icons </a>  
+                    <a class="underline text-blue-400" href="https://marketplace.visualstudio.com/items?itemName=MrRevillod.one-dark-minimal"> One Dark Minimal </a>  
+                    <a class="underline text-blue-400" href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.symbols"> Symbols </a>  
+                </div>
+    
+            </section>
+    
+            <section class="flex flex-col gap-4">
+    
+                <h2>Extensiones Utilizadas (Funcionalidad)</h2>
+        
+                <div class="flex flex-col gap-2">
+                    <a class="underline text-blue-400" href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens"> Error lens </a>
+                    <a class="underline text-blue-400" href="https://marketplace.visualstudio.com/items?itemName=chrisbibby.hide-node-modules"> Hide Node Modules </a>
+                    <a class="underline text-blue-400" href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense"> Path Intellisense </a>
+                    <a class="underline text-blue-400" href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim"> Vim </a>
+                </div>
+    
+            </section>
+
         </section>
 
         <Footer />
+
     </main>
 </Layout>

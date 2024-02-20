@@ -7,7 +7,7 @@ interface Props {
 
 const { first_image, second_image, third_image } = Astro.props;
 
-import ProjectImage from "./ProjectImage.tsx";
+import ProjectImage from "./ProjectImage";
 ---
 
 <article
@@ -16,7 +16,8 @@ import ProjectImage from "./ProjectImage.tsx";
     <section class="min-h-full rounded-md md:block hidden">
         <ProjectImage
             client:load
-            transition:persist
+            image={third_image}
+            customClasses={"w-full h-full object-cover"}
             image={first_image}
             customClasses={"h-full w-full object-cover"}
         />
@@ -27,7 +28,6 @@ import ProjectImage from "./ProjectImage.tsx";
         <div class="h-full w-full rounded-md overflow-hidden object- sc">
             <ProjectImage
                 client:load
-                transition:persist
                 image={second_image}
                 customClasses={"w-full h-full object-cover"}
             />
@@ -35,7 +35,6 @@ import ProjectImage from "./ProjectImage.tsx";
         <div class="h-full w-full rounded-md overflow-hidden">
             <ProjectImage
                 client:load
-                transition:persist
                 image={third_image}
                 customClasses={"w-full h-full object-cover"}
             />

@@ -25,7 +25,7 @@ export const smartParkingIcons = [
 
 export const oneDarkIcons = [
     "devicon-javascript-plain",
-    "devicon-nodejs-plain",
+    "devicon-css3-plain",
 ]
 
 export const authenticatorIcons = [
