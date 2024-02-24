@@ -4,7 +4,6 @@ export const infoIcons = [
     "devicon-css3-plain",
     "devicon-javascript-plain",
     "devicon-nodejs-plain",
-    "devicon-express-original",
     "devicon-tailwindcss-plain",
     "devicon-rust-plain",
     "devicon-mongodb-plain",
@@ -29,6 +28,10 @@ export const oneDarkIcons = [
 ]
 
 export const authenticatorIcons = [
+    "devicon-nodejs-plain",
+    "devicon-react-original",
+    "devicon-tailwindcss-plain",
     "devicon-rust-plain",
-    "devicon-mysql-plain",
+    "devicon-mongodb-plain",
+    "devicon-docker-plain",
 ]

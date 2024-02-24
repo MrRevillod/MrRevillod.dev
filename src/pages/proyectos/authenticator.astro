@@ -1,61 +1,34 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import ProjectFeature from "../../components/ProjectFeature.astro";
+import ProjectHeader from "../../components/ProjectHeader.astro";
+import ProjectGridImages from "../../components/ProjectGridImages.astro";
+
+import { authenticatorIcons } from "../../utils/icons";
 ---
 
 <Layout title="Authenticator">
     <main
-        class="h-screen w-screen flex flex-col items-center justify-center font-inter text-white gap-12 md:mt-0 mt-16"
+        class="w-11/12 md:w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-4 md:gap-8 pt-8 md:p-0"
     >
-        <section
-            class="flex flex-col items-center justify-center md:gap-12 w-10/12"
-        >
-            <div
-                class="flex flex-col gap-4 md:gap-8 items-center justify-center"
-            >
-                <h1
-                    class="text-4xl md:text-5xl lg:text-6xl font-bold text-center md:m-0 mb-4"
-                >
-                    Sistema de autenticación
-                    <span class="text-blue-300">HTTP</span>.
-                </h1>
-                <p
-                    class="text-sm md:text-md lg:text-lg mt-2 md:mt-4 text-center"
-                >
-                    Proyecto creado utilizando un stack de tecnologías modernas
-                    en el desarrollo web backend.
-                </p>
-            </div>
-        </section>
+        <ProjectHeader
+            devIcons={authenticatorIcons}
+            projectName="Authenticator"
+            projectHref="https://github.com/MrRevillod/Authenticator"
+        />
 
-        <section class="flex flex-row w-3/4 md:w-1/2 gap-4 justify-center items-center md:m-0 mt-4">
-            <a class="a-button inline-flex items-center justify-center border border-neutral-300 px-4 md:px-8 py-1 md:py-2 rounded-lg w-36 md:w-44 h-12 md:h-12 hover:-translate-y-1 transition transform"
-                href="https://github.com/MrRevillod/Authenticator" target="_blank" rel="noreferrer">
-                <img class="w-4 md:w-5 h-4 md:h-5" src="https://img.icons8.com/ios-filled/F5F5F5/github.png"
-                    alt="github-icon" />
-                <span class="font-semibold ml-2 text-xs md:text-base">Repositorio</span>
-            </a>
-        </section>
+        <ProjectGridImages
+            first_image="/images/authenticator-arq.png"
+            second_image="/images/authenticator.png"
+            third_image="/images/react-code.webp"
+        />
 
-        <section
-            class="grid lg:grid-cols-2 lg:grid-rows-2 grid-cols-1 grid-rows-4 gap-4 h-3/5 w-9/12 lg:w-1/2 lg:h-1/3 place-content-center place-items-center -mb-36"
-        >
-            <ProjectFeature
-                cardTitle="Código abierto"
-                cardText="El código fuente de este proyecto está disponible en github, puedes verlo y contribuir a él."
-            />
-            <ProjectFeature
-                cardTitle="Seguridad y JWT"
-                cardText="El sistema de autenticación se basa en el estandar JsonWebToken, una tecnología moderna y segura."
-            />
-            <ProjectFeature
-                cardTitle="API REST"
-                cardText="El proyecto cuenta con una API REST que permite realizar operaciones CRUD sobre los usuarios."
-            />
-            <ProjectFeature
-                cardTitle="Stack de desarrollo moderno"
-                cardText="Authenticator ha sido creado utilizando rust, un lenguaje de programación moderno, eficiente y seguro."
-            />
-        </section>
+        <p class="text-lg mt-4">
+            Authenticator es una aplicación modelo de autenticación y gestión de
+            usuarios. Ha sido desarrollada con el fin de ser utilizada como base
+            para el desarrollo de aplicaciones fullstack que requieran
+            eficiencia del lado del servidor. El stack de desarrollo consiste en
+            React del lado del cliente y de Rust del lado del servidor,
+            añadiendo servicios de correo electrónico en NodeJS.
+        </p>
     </main>
 </Layout>

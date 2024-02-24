@@ -7,10 +7,10 @@ const pagesMap = [
         desc: "Aplicación de administración y manejo de estacionamientos en tiempo real",
     },
     {
-        pageName: "MinCode - Tema y configuraciones para VSCode",
+        pageName: "MinCode - Tema para VSCode",
         imgSrc: "/images/onedark/rust.png",
         url: "/proyectos/one-dark-minimal",
-        desc: "Tema y configuraciones minimalistas con un enfoque en la escritura de código.",
+        desc: "Configuraciones limpia con un enfoque en la escritura de código.",
     },
     {
         pageName: "Authenticator",
