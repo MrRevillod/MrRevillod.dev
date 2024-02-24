@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import ProjectImage from "../../components/ProjectImage";
 import ProjectHeader from "../../components/ProjectHeader.astro";
 import ProjectGridImages from "../../components/ProjectGridImages.astro";
 
@@ -20,6 +21,12 @@ import { authenticatorIcons } from "../../utils/icons";
             first_image="/images/authenticator-arq.png"
             second_image="/images/authenticator.png"
             third_image="/images/react-code.webp"
+            customClasses="hidden md:grid"
+        />
+
+        <ProjectImage
+            image="/images/authenticator-arq.png"
+            customClasses="md:hidden mt-4"
         />
 
         <p class="text-lg mt-4">

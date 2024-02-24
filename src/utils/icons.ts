@@ -23,6 +23,7 @@ export const smartParkingIcons = [
 ];
 
 export const oneDarkIcons = [
+    "devicon-bash-plain",
     "devicon-javascript-plain",
     "devicon-css3-plain",
 ]

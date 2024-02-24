@@ -1,3 +1,7 @@
+---
+import { monthMap } from "../utils/date";
+---
+
 <footer
     class="flex flex-row rounded-t-md h-20 items-center justify-between pl-4 pr-4 bg-neutral-800 text-sm bottom-0"
 >
@@ -5,6 +9,6 @@
 
     <p class="flex md:hidden">{new Date().getFullYear()}</p>
     <p class="hidden md:flex">
-        Todos los derechos reservados {new Date().getFullYear()}
+        {`${monthMap.get(new Date().getMonth())} - ${new Date().getFullYear()}`}
     </p>
 </footer>

@@ -1,0 +1,15 @@
+
+export const monthMap = new Map()
+
+monthMap.set(0, 'Enero')
+monthMap.set(1, 'Febrero')
+monthMap.set(2, 'Marzo')
+monthMap.set(3, 'Abril')
+monthMap.set(4, 'Mayo')
+monthMap.set(5, 'Junio')
+monthMap.set(6, 'Julio')
+monthMap.set(7, 'Agosto')
+monthMap.set(8, 'Septiembre')
+monthMap.set(9, 'Octubre')
+monthMap.set(10, 'Noviembre')
+monthMap.set(11, 'Diciembre')
