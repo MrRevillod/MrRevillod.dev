@@ -4,45 +4,46 @@ import ProjectHeader from "../../components/ProjectHeader.astro";
 import ProjectGridImages from "../../components/ProjectGridImages.astro";
 
 import { smartParkingIcons } from "../../utils/icons";
+import Footer from "../../components/Footer.astro";
 ---
 
 <Layout title="Proyectos - Smart Parking">
-    <main
-        class="w-11/12 md:w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-8 pt-8 md:p-0"
-    >
-        <ProjectHeader
-            projectName="SmartParking"
-            devIcons={smartParkingIcons}
-            projectHref="https://github.com/MrRevillod/SmartParking"
-        />
+  <main
+    class="w-11/12 md:w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-8 pt-8 md:p-0"
+  >
+    <ProjectHeader
+      projectName="SmartParking"
+      devIcons={smartParkingIcons}
+      projectHref="https://github.com/MrRevillod/SmartParking"
+    />
 
-        <ProjectGridImages
-            first_image="/images/smartparking/admin.webp"
-            second_image="/images/smartparking/mobile-1.webp"
-            third_image="/images/smartparking/mobile-2.webp"
-            customClasses=""
-        />
+    <ProjectGridImages
+      first_image="/images/smartparking/admin.webp"
+      second_image="/images/smartparking/mobile-1.webp"
+      third_image="/images/smartparking/mobile-2.webp"
+      customClasses=""
+    />
 
-        <article class="flex flex-col gap-4">
-            <section class="flex">
-                <p>
-                    Smart Parking es un proyecto que busca facilitar la
-                    administración y gestión de estacionamientos. Esta web
-                    permite a los administradores mantenerse al tanto de lo que
-                    sucede en el recinto y manejar de mejor manera el lugar.
-                </p>
-            </section>
+    <article class="flex flex-col gap-4">
+      <section class="flex">
+        <p>
+          Smart Parking es un proyecto que busca facilitar la administración y
+          gestión de estacionamientos. Esta web permite a los administradores
+          mantenerse al tanto de lo que sucede en el recinto y manejar de mejor
+          manera el lugar.
+        </p>
+      </section>
 
-            <section class="flex flex-col gap-2">
-                <h2 class="text-lg font-semibold">Metodología y desarrollo</h2>
-                <p>
-                    Este proyecto fue desarrollado en un equipo de 5 personas
-                    bajo la metodología Scrum. Dentro del equipo, me encargué de
-                    la implementación del backend, tanto de la API REST,
-                    auntenticación de usuarios y sistema de comunicación en
-                    tiempo real con Socket.io.
-                </p>
-            </section>
-        </article>
-    </main>
+      <section class="flex flex-col gap-2">
+        <h2 class="text-lg font-semibold">Metodología y desarrollo</h2>
+        <p>
+          Este proyecto fue desarrollado en un equipo de 5 personas bajo la
+          metodología Scrum. Dentro del equipo, me encargué de la implementación
+          del backend, tanto de la API REST, auntenticación de usuarios y
+          sistema de comunicación en tiempo real con Socket.io.
+        </p>
+      </section>
+    </article>
+    <Footer />
+  </main>
 </Layout>

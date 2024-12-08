@@ -1,0 +1,127 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectHeader from "../../components/ProjectHeader.astro";
+import ProjectGridImages from "../../components/ProjectGridImages.astro";
+
+import { proteccionMayorIcons } from "../../utils/icons";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title="Proyectos - Protección Mayor">
+  <main
+    class="w-11/12 md:w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-8 md:p-0"
+  >
+    <ProjectHeader
+      projectName="Protección Mayor"
+      devIcons={proteccionMayorIcons}
+      projectHref="https://github.com/MrRevillod/Proteccion-Mayor"
+    />
+
+    <section class="flex">
+      <p>
+        <strong>Protección Mayor</strong> es una plataforma web desarrollada para
+        resolver una problemática planteada por la Dirección de Personas Mayores
+        de la Municipalidad de Temuco. El objetivo consiste en facilitar y modernizar
+        el proceso de incripción y prestación de servicios a personas mayores de
+        la ciudad.
+      </p>
+    </section>
+
+    <ProjectGridImages
+      first_image="/images/proteccionmayor/page.png"
+      second_image="/images/proteccionmayor/logo-bg.png"
+      third_image="/images/proteccionmayor/logo-qr.png"
+      customClasses=""
+    />
+
+    <article class="flex flex-col gap-4">
+      <section>
+        <p>
+          La plataforma web permite gestionar la inscripción de personas
+          mayores, administrar usuarios, servicios y centros de atención. Además
+          cuenta con un sistema de calendarios que permiten visualizar en tiempo
+          real los cambios en las horas de atención disponibles.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <main
+    class="w-11/12 md:w-10/12 lg:w-7/12 flex flex-col justify-center gap-8 md:p-0"
+  >
+    <section class="flex flex-col gap-2">
+      <h2 class="text-lg font-semibold">Metodología y desarrollo</h2>
+      <p>
+        Este proyecto fue desarrollado en un equipo de 5 personas bajo la
+        metodología Scrum. Dentro del equipo, mi rol fue el de Scrum Master, en
+        donde me encargué de la planificación, diseño de arquitectura y
+        asignación de tareas. Además, como desarrollador me encargué de la
+        plataforma web y de los servicios backend implementados.
+        <br />
+        <br />
+        Este proyecto significó un gran desafío para mí, sin embargo, me permitió
+        aprender nuevas tecnologías y perfeccionar aquellas que ya conocía.
+      </p>
+    </section>
+
+    <h2 class="text-lg font-semibold">Imágenes del proyecto</h2>
+    <section class="flex flex-col gap-8">
+      <div class="w-full object-cover object-center rounded-md">
+        <img
+          src="/images/proteccionmayor/centers.png"
+          alt="Inscripción de personas mayores"
+          class="w-full h-full object-cover object-center rounded-md"
+        />
+      </div>
+
+      <div class="w-full object-cover object-center rounded-md">
+        <img
+          src="/images/proteccionmayor/services.png"
+          alt="Inscripción de personas mayores"
+          class="w-full h-full object-cover object-center rounded-md"
+        />
+      </div>
+
+      <div class="w-full object-cover object-center rounded-md">
+        <img
+          src="/images/proteccionmayor/calendar.png"
+          alt="Inscripción de personas mayores"
+          class="w-full h-full object-cover object-center rounded-md"
+        />
+      </div>
+      <div class="w-full object-cover object-center rounded-md">
+        <img
+          src="/images/proteccionmayor/weekview.png"
+          alt="Inscripción de personas mayores"
+          class="w-full h-full object-cover object-center rounded-md"
+        />
+      </div>
+      <div class="w-full object-cover object-center rounded-md">
+        <img
+          src="/images/proteccionmayor/create-event.png"
+          alt="Inscripción de personas mayores"
+          class="w-full h-full object-cover object-center rounded-md"
+        />
+      </div>
+      <div class="w-full object-cover object-center rounded-md">
+        <img
+          src="/images/proteccionmayor/professionals.png"
+          alt="Inscripción de personas mayores"
+          class="w-full h-full object-cover object-center rounded-md"
+        />
+      </div>
+      <div class="w-full object-cover object-center rounded-md">
+        <img
+          src="/images/proteccionmayor/seniors.png"
+          alt="Inscripción de personas mayores"
+          class="w-full h-full object-cover object-center rounded-md"
+        />
+      </div>
+    </section>
+    <p>
+      La información de usuarios mostrada en las imágenes es ficticia y generada
+      por la librería <strong>fakerjs</strong>.
+    </p>
+    <Footer />
+  </main>
+</Layout>

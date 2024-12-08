@@ -6,14 +6,14 @@ import Main from "../layouts/Main.astro";
 ---
 
 <Layout title="Contacto">
-    <Main customClasses="lg:gap-40 md:gap-40 gap-24">
-        <Header />
+  <Main customClasses="lg:gap-40 md:gap-40 gap-24">
+    <Header />
 
-        <article class="w-full flex flex-col gap-6 items-center justify-center">
-            <h1 class="md:w-7/12 w-11/12 text-xl md:text-3xl font-bold">
-                Iniciemos una conversación
-            </h1>
-            <ContactForm client:visible transition:persist />
-        </article>
-    </Main>
+    <article class="w-full flex flex-col gap-6 items-center justify-center">
+      <h1 class="md:w-7/12 w-11/12 text-xl md:text-3xl font-bold">
+        Iniciemos una conversación
+      </h1>
+      <ContactForm client:visible transition:persist />
+    </article>
+  </Main>
 </Layout>

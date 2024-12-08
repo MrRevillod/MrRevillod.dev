@@ -1,15 +1,11 @@
 
 export const infoIcons = [
-    "devicon-html5-plain",
-    "devicon-css3-plain",
-    "devicon-javascript-plain",
+    "devicon-typescript-plain",
     "devicon-nodejs-plain",
-    "devicon-tailwindcss-plain",
     "devicon-rust-plain",
     "devicon-mongodb-plain",
     "devicon-mysql-plain",
     "devicon-linux-plain",
-    "devicon-docker-plain",
 ];
 
 export const smartParkingIcons = [
@@ -35,4 +31,15 @@ export const authenticatorIcons = [
     "devicon-rust-plain",
     "devicon-mongodb-plain",
     "devicon-docker-plain",
+]
+
+export const proteccionMayorIcons = [
+    "devicon-react-original",
+    "devicon-tailwindcss-plain",
+    "devicon-nodejs-plain",
+    "devicon-typescript-plain",
+    "devicon-mysql-plain",
+    "devicon-nginx-plain",
+    "devicon-prisma-plain",
+    "devicon-socketio-original",
 ]

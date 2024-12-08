@@ -7,19 +7,17 @@ import Footer from "../../components/Footer.astro";
 import type { PostFrontmatter } from "../../content/config";
 
 export const getStaticPaths = async () => {
-    const posts = await Astro.glob<PostFrontmatter>(
-        "../../content/posts/*.mdx",
-    );
+  const posts = await Astro.glob<PostFrontmatter>("../../content/posts/*.mdx");
 
-    return posts.map((post) => ({
-        params: {
-            slug: post.frontmatter.slug,
-        },
-        props: {
-            post,
-            title: post.frontmatter.title,
-        },
-    }));
+  return posts.map((post) => ({
+    params: {
+      slug: post.frontmatter.slug,
+    },
+    props: {
+      post,
+      title: post.frontmatter.title,
+    },
+  }));
 };
 
 const { Content } = Astro.props.post;
@@ -27,19 +25,19 @@ const { title, date } = Astro.props.post.frontmatter;
 ---
 
 <Layout title={title}>
-    <Main customClasses="">
-        <Header />
+  <Main customClasses="">
+    <Header />
 
-        <article
-            class="flex md:flex-row flex-col justify-between w-full md:-mb-8 mt-4 gap-4 md:gap-0 md:items-center"
-        >
-            <h1>{title}</h1>
-            <h4><strong>Fecha:</strong> {date}</h4>
-        </article>
+    <article
+      class="flex md:flex-row flex-col justify-between w-full md:-mb-8 mt-4 gap-4 md:gap-0 md:items-center"
+    >
+      <h1>{title}</h1>
+      <h4><strong>Fecha:</strong> {date}</h4>
+    </article>
 
-        <article class="flex flex-col gap-4 mt-0 md:mt-8">
-            <Content />
-        </article>
-        <Footer />
-    </Main>
+    <article class="flex flex-col gap-4 mt-0 md:mt-8">
+      <Content />
+    </article>
+    <Footer />
+  </Main>
 </Layout>

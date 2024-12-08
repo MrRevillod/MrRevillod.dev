@@ -13,11 +13,9 @@ import { infoIcons } from "../utils/icons.ts";
             class="flex flex-col items-center justify-center w-full gap-12 md:gap-8"
         >
             <div class="w-full flex flex-col gap-4">
-                <h4 class="text-xl font-semibold">Sobre mí</h4>
                 <p>
-                    Estudiante de segundo año de ingeniería civil en informática
-                    de la Universidad Católica de Temuco, Chile. Especialmente
-                    entusiasmado con el desarrollo web backend en donde cada día
+                    Estudiante de Ingeniería Civil en Informática. Especialmente
+                    entusiasmado en el desarrollo web backend, cada día
                     me esfuerzo por aprender nuevas tecnologías, así como
                     mejorar las que ya domino.
                 </p>
@@ -26,9 +24,7 @@ import { infoIcons } from "../utils/icons.ts";
                 class="md:flex w-full md:flex-row md:items-start md:justify-start grid grid-cols-5 place-items-center place-content-center grid-rows-2 gap-6"
             >
                 {
-                    infoIcons.map((icon) => {
-                        return <DevIcon iconClass={icon} />;
-                    })
+                    infoIcons.map((icon) => <DevIcon iconClass={icon} />)
                 }
             </div>
         </div>

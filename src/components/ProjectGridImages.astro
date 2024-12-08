@@ -1,9 +1,9 @@
 ---
 interface Props {
-    first_image: string;
-    second_image: string;
-    third_image: string;
-    customClasses: string | undefined;
+  first_image: string;
+  second_image: string;
+  third_image: string;
+  customClasses: string | undefined;
 }
 
 let { first_image, second_image, third_image, customClasses } = Astro.props;
@@ -14,33 +14,33 @@ customClasses = customClasses || "";
 ---
 
 <article
-    class=`md:h-1/2 h-1/3 grid md:grid-cols-2fr-1fr md:grid-rows-1 grid-cols-1 grid-rows-1 gap-4 ${customClasses}`
+  class=`md:h-1/2 h-1/3 grid md:grid-cols-2fr-1fr md:grid-rows-1 grid-cols-1 grid-rows-1 gap-4 ${customClasses}`
 >
-    <section class="min-h-full rounded-md md:block hidden">
-        <ProjectImage
-            client:load
-            image={third_image}
-            customClasses={"w-full h-full object-cover"}
-            image={first_image}
-            customClasses={"h-full w-full object-cover"}
-        />
-    </section>
-    <section
-        class="min-h-full grid grid-cols-2 grid-rows-1 gap-4 md:grid-cols-1 md:grid-rows-2"
-    >
-        <div class="h-full w-full rounded-md overflow-hidden object- sc">
-            <ProjectImage
-                client:load
-                image={second_image}
-                customClasses={"w-full h-full object-cover"}
-            />
-        </div>
-        <div class="h-full w-full rounded-md overflow-hidden">
-            <ProjectImage
-                client:load
-                image={third_image}
-                customClasses={"w-full h-full object-cover"}
-            />
-        </div>
-    </section>
+  <section class="min-h-full rounded-md md:block hidden">
+    <ProjectImage
+      client:load
+      image={third_image}
+      customClasses={"w-full h-full object-cover"}
+      image={first_image}
+      customClasses={"h-full w-full object-cover"}
+    />
+  </section>
+  <section
+    class="min-h-full grid grid-cols-2 grid-rows-1 gap-4 md:grid-cols-1 md:grid-rows-2"
+  >
+    <div class="h-full w-full rounded-md overflow-hidden object- sc">
+      <ProjectImage
+        client:load
+        image={second_image}
+        customClasses={"w-full h-full object-cover"}
+      />
+    </div>
+    <div class="h-full w-full rounded-md overflow-hidden">
+      <ProjectImage
+        client:load
+        image={third_image}
+        customClasses={"w-full h-full object-cover"}
+      />
+    </div>
+  </section>
 </article>

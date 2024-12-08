@@ -9,128 +9,127 @@ import { oneDarkIcons } from "../../utils/icons";
 ---
 
 <Layout title="Proyectos - MinCode">
-    <main
-        class="w-11/12 md:w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-4 md:gap-8 pt-8 md:p-0"
+  <main
+    class="w-11/12 md:w-10/12 lg:w-7/12 h-screen flex flex-col justify-center gap-4 md:gap-8 pt-8 md:p-0"
+  >
+    <ProjectHeader
+      devIcons={oneDarkIcons}
+      projectName="MinCode"
+      projectHref="https://github.com/MrRevillod/MinCode"
+    />
+
+    <ProjectGridImages
+      first_image="/images/onedark/theme.webp"
+      second_image="/images/onedark/vscode.webp"
+      third_image="/images/onedark/logo.webp"
+      customClasses=""
+    />
+
+    <article class="flex flex-col gap-4">
+      <section class="flex mt-4">
+        <p class="text-lg">
+          Configuración minimalista para Visual Studio Code. Se excluye la mayor
+          parte de distracciones y se enfoca en la escritura de código. Además
+          del tema base hay un sin número de opciones Además del tema base hay
+          un sin número de opciones adicionales a configurar para mejorar la
+          interfaz y la experiencia de usuario. En su mayoría estos ajustes
+          consisten en desabilitar caracteristicas del editor.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <main
+    class="w-11/12 md:w-10/12 lg:w-7/12 flex flex-col justify-center gap-4 md:gap-4"
+  >
+    <h2 class="text-4xlxl font-bold">Apariencia</h2>
+
+    <section class="flex flex-col gap-2">
+      <ProjectImage
+        client:load
+        image="/images/onedark/welcome.png"
+        customClasses={"w-full h-full object-cover"}
+      />
+
+      <ProjectImage
+        client:load
+        image="/images/onedark/rust.png"
+        customClasses={"w-full h-full object-cover"}
+      />
+
+      <ProjectImage
+        client:load
+        image="/images/onedark/node.png"
+        customClasses={"w-full h-full object-cover"}
+      />
+    </section>
+
+    <section
+      class="flex flex-col md:flex-row gap-8 md:gap-0 justify-between my-12"
     >
-        <ProjectHeader
-            devIcons={oneDarkIcons}
-            projectName="MinCode"
-            projectHref="https://github.com/MrRevillod/MinCode"
-        />
+      <section class="flex flex-col gap-4">
+        <h2>Extensiones Utilizadas (UI)</h2>
 
-        <ProjectGridImages
-            first_image="/images/onedark/theme.webp"
-            second_image="/images/onedark/vscode.webp"
-            third_image="/images/onedark/logo.webp"
-            customClasses=""
-        />
+        <div class="flex flex-col gap-2">
+          <a
+            class="underline text-blue-400"
+            href="https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension"
+          >
+            APC Customize UI++
+          </a>
+          <a
+            class="underline text-blue-400"
+            href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.fluent-icons"
+          >
+            Fluent icons
+          </a>
+          <a
+            class="underline text-blue-400"
+            href="https://marketplace.visualstudio.com/items?itemName=MrRevillod.one-dark-minimal"
+          >
+            One Dark Minimal
+          </a>
+          <a
+            class="underline text-blue-400"
+            href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.symbols"
+          >
+            Symbols
+          </a>
+        </div>
+      </section>
 
-        <article class="flex flex-col gap-4">
-            <section class="flex mt-4">
-                <p class="text-lg">
-                    Configuración minimalista para Visual Studio Code. Se
-                    excluye la mayor parte de distracciones y se enfoca en la
-                    escritura de código. Además del tema base hay un sin número
-                    de opciones Además del tema base hay un sin número de
-                    opciones adicionales a configurar para mejorar la interfaz y
-                    la experiencia de usuario. En su mayoría estos ajustes
-                    consisten en desabilitar caracteristicas del editor.
-                </p>
-            </section>
-        </article>
-    </main>
+      <section class="flex flex-col gap-4">
+        <h2>Extensiones Utilizadas (Funcionalidad)</h2>
 
-    <main
-        class="w-11/12 md:w-10/12 lg:w-7/12 flex flex-col justify-center gap-4 md:gap-4"
-    >
-        <h2 class="text-4xlxl font-bold">Apariencia</h2>
+        <div class="flex flex-col gap-2">
+          <a
+            class="underline text-blue-400"
+            href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens"
+          >
+            Error lens
+          </a>
+          <a
+            class="underline text-blue-400"
+            href="https://marketplace.visualstudio.com/items?itemName=chrisbibby.hide-node-modules"
+          >
+            Hide Node Modules
+          </a>
+          <a
+            class="underline text-blue-400"
+            href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense"
+          >
+            Path Intellisense
+          </a>
+          <a
+            class="underline text-blue-400"
+            href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim"
+          >
+            Vim
+          </a>
+        </div>
+      </section>
+    </section>
 
-        <section class="flex flex-col gap-2">
-            <ProjectImage
-                client:load
-                image="/images/onedark/welcome.png"
-                customClasses={"w-full h-full object-cover"}
-            />
-
-            <ProjectImage
-                client:load
-                image="/images/onedark/rust.png"
-                customClasses={"w-full h-full object-cover"}
-            />
-
-            <ProjectImage
-                client:load
-                image="/images/onedark/node.png"
-                customClasses={"w-full h-full object-cover"}
-            />
-        </section>
-
-        <section
-            class="flex flex-col md:flex-row gap-8 md:gap-0 justify-between my-12"
-        >
-            <section class="flex flex-col gap-4">
-                <h2>Extensiones Utilizadas (UI)</h2>
-
-                <div class="flex flex-col gap-2">
-                    <a
-                        class="underline text-blue-400"
-                        href="https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension"
-                    >
-                        APC Customize UI++
-                    </a>
-                    <a
-                        class="underline text-blue-400"
-                        href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.fluent-icons"
-                    >
-                        Fluent icons
-                    </a>
-                    <a
-                        class="underline text-blue-400"
-                        href="https://marketplace.visualstudio.com/items?itemName=MrRevillod.one-dark-minimal"
-                    >
-                        One Dark Minimal
-                    </a>
-                    <a
-                        class="underline text-blue-400"
-                        href="https://marketplace.visualstudio.com/items?itemName=miguelsolorio.symbols"
-                    >
-                        Symbols
-                    </a>
-                </div>
-            </section>
-
-            <section class="flex flex-col gap-4">
-                <h2>Extensiones Utilizadas (Funcionalidad)</h2>
-
-                <div class="flex flex-col gap-2">
-                    <a
-                        class="underline text-blue-400"
-                        href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens"
-                    >
-                        Error lens
-                    </a>
-                    <a
-                        class="underline text-blue-400"
-                        href="https://marketplace.visualstudio.com/items?itemName=chrisbibby.hide-node-modules"
-                    >
-                        Hide Node Modules
-                    </a>
-                    <a
-                        class="underline text-blue-400"
-                        href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense"
-                    >
-                        Path Intellisense
-                    </a>
-                    <a
-                        class="underline text-blue-400"
-                        href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim"
-                    >
-                        Vim
-                    </a>
-                </div>
-            </section>
-        </section>
-
-        <Footer />
-    </main>
+    <Footer />
+  </main>
 </Layout>

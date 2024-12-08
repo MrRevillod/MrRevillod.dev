@@ -1,10 +1,17 @@
 
-const pagesMap = [
+type Page = {
+    pageName: string,
+    imgSrc?: string,
+    url?: string,
+    desc?: string
+}
+
+const pagesMap: Page[] = [
     {
-        pageName: "SmartParking",
-        imgSrc: "/images/smartparking/page.png",
-        url: "/proyectos/smartparking",
-        desc: "Aplicación de administración y manejo de estacionamientos en tiempo real",
+        pageName: "Protección Mayor",
+        imgSrc: "/images/proteccionmayor/services.png",
+        url: "/proyectos/proteccion-mayor",
+        desc: "Sistema de administración de servicios para personas mayores",
     },
     {
         pageName: "MinCode - Tema para VSCode",
@@ -17,6 +24,12 @@ const pagesMap = [
         imgSrc: "/images/authenticator.png",
         url: "/proyectos/authenticator",
         desc: "Sistema de autenticación RESTFUL con Rust y Axum"
+    },
+    {
+        pageName: "SmartParking",
+        imgSrc: "/images/smartparking/page.png",
+        url: "/proyectos/smartparking",
+        desc: "Aplicación de administración y manejo de estacionamientos en tiempo real",
     },
     {
         pageName: "Recursos",
